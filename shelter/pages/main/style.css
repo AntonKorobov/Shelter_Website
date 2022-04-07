@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+}
+
+.wraper {
+    display: grid;
+    border: 2px solid blue;
+    background-color: rgb(229, 255, 0);
+    grid-template-columns: 1fr;
+    row-gap: 0px;
+}
+
+header {
+    width: 80%;
+    margin: 0 auto 0 auto;
+    text-align: center;
+    background-color: rgb(12, 175, 6);
+}
+
+section {
+    width: 80%;
+    margin: 0 auto 0 auto;
+    text-align: center;
+}
+
+#start_screen {
+    background-color: blueviolet;
+}
+
+#about {
+    background-color: white;
+}
+
+#pets {
+    background-color: rgb(202, 58, 159);
+}
+
+#help {
+    background-color: rgb(12, 97, 76);
+}
+
+#donation {
+    background-color: rgb(172, 41, 24);
+}
+
+footer {
+    width: 80%;
+    margin: 0 auto 0 auto;
+    text-align: center;
+    background-color: rgb(109, 8, 84);
+}
