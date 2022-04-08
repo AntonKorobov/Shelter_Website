@@ -10,42 +10,38 @@ body {
     row-gap: 0px;
 }
 
-header {
+section {}
+
+.container {
     width: 80%;
     margin: 0 auto 0 auto;
     text-align: center;
+}
+
+.header {
     background-color: rgb(12, 175, 6);
 }
 
-section {
-    width: 80%;
-    margin: 0 auto 0 auto;
-    text-align: center;
-}
-
-#start_screen {
+.start_screen {
     background-color: blueviolet;
 }
 
-#about {
+.about {
     background-color: white;
 }
 
-#pets {
+.pets {
     background-color: rgb(202, 58, 159);
 }
 
-#help {
+.help {
     background-color: rgb(12, 97, 76);
 }
 
-#donation {
+.donation {
     background-color: rgb(172, 41, 24);
 }
 
-footer {
-    width: 80%;
-    margin: 0 auto 0 auto;
-    text-align: center;
+.footer {
     background-color: rgb(109, 8, 84);
 }
