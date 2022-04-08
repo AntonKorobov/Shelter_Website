@@ -45,8 +45,9 @@ section {
     border: 2px solid var(--main-color-primary);
 }
 
-.header {
-    padding: 60px 0;
+header .container {
+    display: flex;
+    justify-content: space-between;
 }
 
 header nav {
@@ -103,6 +104,27 @@ footer nav ul li {
 
 .pets {
     background-color: var(--main-color-light-l);
+}
+
+.pets .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.pets_scroller {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 60px;
+}
+
+.card {
+    display: block;
+    height: 435px;
+    width: 270px;
+    border: 2px solid var(--main-color-primary);
 }
 
 .help {
