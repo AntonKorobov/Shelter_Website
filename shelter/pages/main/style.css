@@ -39,13 +39,10 @@ section {
 
 .container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     align-items: center;
     width: 94%;
     margin: 0 auto 0 auto;
     border: 2px solid var(--main-color-primary);
-    /*background-color: rgba(255, 255, 255, 0.247);*/
 }
 
 .header {
@@ -78,13 +75,13 @@ footer nav ul li {
 }
 
 .start_screen {
-    /*background-image: url("../../assets/start-screen-background.jpg");
-    background-position: bottom;
-    background-repeat: no-repeat;
-    /*background-size: auto;*/
     background-size: cover;
-    padding: 0px 0;
-    /*background: linear-gradient(to top left, blue, pink);*/
+    padding: 0;
+}
+
+.start_screen .container {
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .start_screen_content {
@@ -93,6 +90,15 @@ footer nav ul li {
 
 .about {
     background-color: var(--main-color-light-xl);
+}
+
+.about .container {
+    justify-content: center;
+    gap: 120px;
+}
+
+.about_content {
+    max-width: 430px;
 }
 
 .pets {
@@ -111,6 +117,6 @@ footer nav ul li {
     background-image: url("../../assets/start-screen-background.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover;
     padding: 0px 0;
 }
