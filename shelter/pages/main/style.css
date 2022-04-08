@@ -17,9 +17,9 @@ section {
 }
 
 .container {
+    display: flex;
     width: 94%;
     margin: 0 auto 0 auto;
-    text-align: center;
     background-color: rgba(0, 0, 0, 0.4);
 }
 
