@@ -12,16 +12,9 @@
     --main-color-dark-3xl: #292929;
 }
 
-body {
+* {
     margin: 0;
-}
-
-div {
-    display: block;
-}
-
-p {
-    display: block;
+    padding: 0;
 }
 
 .wrapper {
@@ -115,8 +108,10 @@ footer nav ul li {
 
 .pets_scroller {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
     gap: 60px;
 }
 
@@ -127,18 +122,66 @@ footer nav ul li {
     border: 2px solid var(--main-color-primary);
 }
 
+.scroller_button {
+    display: block;
+    height: 52px;
+    width: 52px;
+    border: 2px solid var(--main-color-primary);
+}
+
 .help {
     background-color: var(--main-color-light-xl);
+}
+
+.help .container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.help_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 55px;
+}
+
+.help_card {
+    width: 160px;
+    height: 113px;
+    border: 2px solid var(--main-color-primary);
 }
 
 .donation {
     background-color: var(--main-color-light-l);
 }
 
+.donation .container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+}
+
+.donation_content {
+    width: 380px;
+}
+
 .footer {
+    padding: 40px 0 0 0;
     background-image: url("../../assets/start-screen-background.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 0px 0;
+}
+
+.footer .container {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer_content {
+    width: 302px;
+    height: 234px;
+    border: 2px solid var(--main-color-primary);
 }
