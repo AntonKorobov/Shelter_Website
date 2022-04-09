@@ -17,6 +17,59 @@
     padding: 0;
 }
 
+h2 {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 130%;
+    color: var(--main-color-light-xl);
+}
+
+h3 {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    color: var(--main-color-dark-l);
+}
+
+footer h3 {
+    color: var(--main-color-light-xl);
+}
+
+a {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: var(--main-color-dark-s);
+}
+
+p {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: var(--main-color-dark-s);
+}
+
+.about p {
+    color: var(--main-color-dark-xl);
+}
+
+.help p {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    color: var(--main-color-dark-l);
+}
+
 .wrapper {
     display: grid;
     background-color: var(--main-color-dark-s);
@@ -149,6 +202,7 @@ footer nav ul li {
 .help_card {
     width: 160px;
     height: 113px;
+    text-align: center;
     border: 2px solid var(--main-color-primary);
 }
 
