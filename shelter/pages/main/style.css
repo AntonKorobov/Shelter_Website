@@ -53,14 +53,30 @@ h5 {
     line-height: 110%;
 }
 
-a {
+nav a {
     font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
     line-height: 160%;
     color: var(--main-color-dark-s);
+    text-decoration: none;
 }
+
+.first_a {
+    text-decoration: underline;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: var(--main-color-light-xl);
+}
+
+
+/*a.nav:active {
+    text-decoration: none;
+    color: var(--main-color-dark-s);
+}*/
 
 p {
     font-family: 'Arial';
@@ -180,6 +196,12 @@ footer nav ul li {
     font-size: 17px;
     line-height: 130%;
     color: var(--main-color-dark-3xl);
+    text-decoration: none;
+}
+
+.start_screen_button:hover {
+    background-color: var(--main-color-primary-light);
+    cursor: pointer;
 }
 
 .start_screen h2 {
@@ -266,14 +288,26 @@ footer nav ul li {
     font-size: 17px;
     line-height: 130%;
     color: var(--main-color-dark-3xl);
+    text-decoration: none;
+}
+
+.pets_button:hover {
+    background-color: var(--main-color-primary-light);
+    cursor: pointer;
 }
 
 .pets_scroller_button {
     height: 52px;
     width: 52px;
-    border: 2px solid var(--main-color-primary);
-    background-color: var(--main-color-light-s);
+    border: 2px solid var(--main-color-primary-light);
+    background-color: var(--main-color-light-l);
     border-radius: 999px;
+    text-decoration: none;
+}
+
+.pets_scroller_button:hover {
+    cursor: pointer;
+    background-color: var(--main-color-primary-light);
 }
 
 .card {
@@ -288,9 +322,14 @@ footer nav ul li {
     background-color: var(--main-color-light-s);
 }
 
+.card:hover {
+    cursor: pointer;
+    background-color: var(--main-color-light-xl)
+}
+
 .card_button {
     padding: 15px 45px;
-    border: 2px solid var(--main-color-primary);
+    border: 2px solid var(--main-color-primary-light);
     border-radius: 999px;
     background-color: var(--main-color-light-s);
     font-family: 'Georgia';
@@ -299,6 +338,12 @@ footer nav ul li {
     font-size: 17px;
     line-height: 130%;
     color: var(--main-color-dark-3xl);
+    text-decoration: none;
+}
+
+.card:hover .card_button {
+    cursor: pointer;
+    background-color: var(--main-color-primary-light);
 }
 
 .help {
@@ -383,6 +428,8 @@ footer nav ul li {
     background-color: var(--main-color-primary);
     border: none;
     border-radius: 999px;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .footer {
@@ -420,4 +467,6 @@ footer h4 {
     align-items: center;
     gap: 20px;
     margin: 40px 0 0 0;
+    text-decoration: none;
+    cursor: pointer;
 }
