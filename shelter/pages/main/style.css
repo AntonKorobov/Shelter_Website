@@ -112,8 +112,22 @@ header .container {
     justify-content: space-between;
 }
 
+.header_our_pets {
+    padding: 0;
+    background-color: var(--main-color-light-xl);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header_our_pets header {
+    padding: 30px 0 30px 0;
+}
+
 .title {
     text-align: center;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .title h1 {
@@ -126,6 +140,10 @@ header .container {
     margin-bottom: 10px;
 }
 
+.header_our_pets .title h1 {
+    color: var(--main-color-dark-l);
+}
+
 .title p {
     font-family: 'Arial';
     font-style: normal;
@@ -135,8 +153,16 @@ header .container {
     color: var(--main-color-light-xl);
 }
 
-header {
+.header_our_pets .title p {
+    color: var(--main-color-dark-3xl);
+}
+
+.header_start_screen header {
     padding: 0 0 60px 0;
+}
+
+.header_our_pets header nav a {
+    color: var(--main-color-dark-3xl);
 }
 
 header nav {
@@ -231,6 +257,10 @@ footer nav ul li {
     margin-top: 25px;
 }
 
+.about h3 {
+    color: var(--main-color-dark-l);
+}
+
 .pets {
     background-color: var(--main-color-light-l);
 }
@@ -264,8 +294,23 @@ footer nav ul li {
     line-height: 130%;
 }
 
+.cards_buttons2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-content: flex-start;
+    gap: 30px 40px;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+}
+
 .pets h3 {
     text-align: center;
+    color: var(--main-color-dark-l);
 }
 
 .pets p {
@@ -306,6 +351,22 @@ footer nav ul li {
 }
 
 .pets_scroller_button:hover {
+    cursor: pointer;
+    background-color: var(--main-color-primary-light);
+}
+
+.navigation_buttons button {
+    height: 52px;
+    width: 52px;
+    border: 2px solid var(--main-color-primary-light);
+    background-color: var(--main-color-light-l);
+    border-radius: 999px;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 10px 0 10px;
+}
+
+.navigation_buttons button:hover {
     cursor: pointer;
     background-color: var(--main-color-primary-light);
 }
@@ -373,6 +434,7 @@ footer nav ul li {
 
 .help h3 {
     text-align: center;
+    color: var(--main-color-dark-l);
 }
 
 .help h4 {
@@ -382,6 +444,10 @@ footer nav ul li {
 
 .donation {
     background-color: var(--main-color-light-l);
+}
+
+.donation h3 {
+    color: var(--main-color-dark-l);
 }
 
 .donation .container {
@@ -402,6 +468,7 @@ footer nav ul li {
 .donation_content {
     display: flex;
     flex-direction: column;
+    align-items: self-start;
     width: 380px;
     gap: 20px;
 }
