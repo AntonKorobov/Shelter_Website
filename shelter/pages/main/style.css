@@ -72,12 +72,6 @@ nav a:hover {
     color: var(--main-color-light-xl);
 }
 
-
-/*a.nav:active {
-    text-decoration: none;
-    color: var(--main-color-dark-s);
-}*/
-
 p {
     font-family: 'Arial';
     font-style: normal;
@@ -92,11 +86,11 @@ p {
     background-color: var(--main-color-dark-s);
     grid-template-columns: 1fr;
     row-gap: 0px;
+    margin: 0 auto 0 auto;
+    max-width: 1280px;
 }
 
 section {
-    max-width: 1280px;
-    margin: 0 auto 0 auto;
     padding: 80px 0 100px 0;
 }
 
@@ -108,7 +102,7 @@ section {
 }
 
 header .container {
-    display: flex;
+    /* display: flex; */
     justify-content: space-between;
 }
 
@@ -358,15 +352,28 @@ footer nav ul li {
 .navigation_buttons button {
     height: 52px;
     width: 52px;
-    border: 2px solid var(--main-color-primary-light);
-    background-color: var(--main-color-light-l);
     border-radius: 999px;
     text-decoration: none;
     text-align: center;
     margin: 0 10px 0 10px;
 }
 
-.navigation_buttons button:hover {
+.button_current_page {
+    border: 2px solid var(--main-color-primary-light);
+    background-color: var(--main-color-primary-light);
+}
+
+.button_active {
+    border: 2px solid var(--main-color-primary-light);
+    background-color: var(--main-color-light-l);
+}
+
+.button_inactive {
+    border: 2px solid var(--main-color-dark-s);
+    background-color: none;
+}
+
+.navigation_buttons .button_active:hover {
     cursor: pointer;
     background-color: var(--main-color-primary-light);
 }
@@ -494,7 +501,7 @@ footer nav ul li {
     padding: 10px 15px;
     background-color: var(--main-color-primary);
     border: none;
-    border-radius: 999px;
+    border-radius: 9px;
     text-decoration: none;
     cursor: pointer;
 }
