@@ -675,7 +675,7 @@ p {
 /*----------------------MIN_WIDTH--------------------------------
     ---------------------------------------------------------------*/
 @media only screen and (max-width: 319px) {
-  .wrapper {
+  body {
     min-width: 1280px;
   }
 }
@@ -696,6 +696,10 @@ p {
     text-align: center;
   }
   /*---------------------HEADER--------------------*/
+  .header__container {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
   .header nav {
     display: none;
   }
@@ -704,19 +708,22 @@ p {
   }
   /*------------------START_SCREEN-----------------*/
   .start_screen__container {
+    overflow: hidden;
     display: block;
     text-align: center;
   }
   .start_screen__content {
+    margin: 0 auto;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
     text-align: center;
   }
   .start-screen-puppy {
+    margin: 0 auto;
+    display: block;
     margin-top: 105px;
-    min-width: 100%;
-    width: 100%;
+    max-width: 460px;
   }
   /*---------------------ABOUT---------------------*/
   .about__container {

@@ -557,7 +557,7 @@
     ---------------------------------------------------------------*/
     
     @media only screen and (max-width: 319px) {
-        .wrapper {
+        body {
             min-width: 1280px;
         }
     }
@@ -578,6 +578,9 @@
             text-align: center;
         }
         /*---------------------HEADER--------------------*/
+        .header__container {
+            justify-content: space-around;
+        }
         .header nav {
             display: none;
         }
@@ -586,17 +589,20 @@
         }
         /*------------------START_SCREEN-----------------*/
         .start_screen__container {
+            overflow: hidden; //delete//!!!
             display: block;
             text-align: center;
         }
         .start_screen__content {
+            margin: 0 auto;
             align-items: center;
             text-align: center;
         }
         .start-screen-puppy {
+            margin: 0 auto;
+            display: block;
             margin-top: 105px;
-            min-width: 100%;
-            width: 100%; //!!!!
+            max-width: 460px;
         }
         /*---------------------ABOUT---------------------*/
         .about__container {
