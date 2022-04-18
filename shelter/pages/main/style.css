@@ -120,20 +120,20 @@ p {
   color: #CDCDCD;
 }
 
-.header__container .header__nav .first_a {
-  text-decoration: underline;
-}
-
-.header__container .header__nav a {
+.header__container .header__nav .header__nav_a_white {
   font-size: 15px;
   line-height: 160%;
   color: #FAFAFA;
   text-decoration: none;
 }
 
-.header__container .header__nav a:hover {
+.header__container .header__nav .header__nav_a_white:hover {
   text-decoration: underline;
   color: #FFFFFF;
+}
+
+.header__container .header__nav .first_a {
+  text-decoration: underline;
 }
 
 .header__container .header__nav ul {
@@ -158,7 +158,18 @@ p {
 .burger div {
   width: 30px;
   height: 2px;
-  background-color: white;
+  background-color: #F1CDB3;
+  margin: 8px 0;
+}
+
+.burger_dark {
+  display: none;
+}
+
+.burger_dark div {
+  width: 30px;
+  height: 2px;
+  background-color: #292929;
   margin: 8px 0;
 }
 
@@ -179,11 +190,14 @@ p {
   color: #545454;
 }
 
-.header_our_pets nav a {
+.header_our_pets .header__nav_a_black {
+  font-size: 15px;
+  line-height: 160%;
   color: #545454;
+  text-decoration: none;
 }
 
-.header_our_pets nav a:hover {
+.header_our_pets .header__nav_a_black:hover {
   text-decoration: underline;
   color: #292929;
 }
@@ -372,18 +386,19 @@ p {
 }
 
 .cards_box {
+  margin: 60px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  row-gap: 30px;
+  gap: 30px 40px;
 }
 
 .card {
@@ -576,7 +591,7 @@ p {
   letter-spacing: 0.1rem;
 }
 
-.donation__dog {
+.donation__dog_img {
   max-width: 100%;
 }
 
@@ -674,14 +689,31 @@ p {
   text-decoration: none;
 }
 
+.footer__puppy {
+  max-width: 300px;
+}
+
+.footer__puppy_img {
+  width: 100%;
+}
+
 /*--------------------PETS-----------------------*/
+.pets .navigation_button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+}
+
 .pets .navigation_button button {
-  height: 52px;
-  width: 52px;
+  min-height: 52px;
+  min-width: 52px;
   border-radius: 999px;
   text-decoration: none;
   text-align: center;
-  margin: 0 10px 0 10px;
 }
 
 .pets .navigation_button_active {
@@ -713,7 +745,7 @@ p {
   .container {
     padding-right: 10px;
     padding-left: 10px;
-    padding-top: 10px;
+    padding-top: 42px;
     padding-bottom: 42px;
   }
   h2 {
@@ -727,18 +759,26 @@ p {
   /*---------------------HEADER--------------------*/
   .header__container {
     padding-top: 30px;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    padding-bottom: 0px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .header nav {
     display: none;
   }
   .burger {
     display: block;
+    margin-right: 43px;
+  }
+  .burger_dark {
+    display: block;
+    margin-right: 43px;
   }
   /*------------------START_SCREEN-----------------*/
   .start_screen__container {
     padding-bottom: 0px;
+    padding-top: 60px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -772,7 +812,7 @@ p {
   }
   .about__content {
     font-size: 15px;
-    margin: 40px 25px 0 25px;
+    margin: 0px 15px 0 15px;
   }
   .about-pets {
     max-width: 260px;
@@ -798,8 +838,14 @@ p {
             flex-direction: row;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 0 80px;
+    margin: 42px 0;
+  }
+  .pets_scroller__button {
+    margin-top: 20px;
   }
   .cards_wrapper {
     -webkit-box-ordinal-group: 0;
@@ -807,12 +853,34 @@ p {
             order: -1;
     width: 100%;
   }
+  .cards_box__4_item {
+    display: none;
+  }
+  .cards_box__5_item {
+    display: none;
+  }
+  .cards_box__6_item {
+    display: none;
+  }
+  .cards_box__7_item {
+    display: none;
+  }
+  .cards_box__8_item {
+    display: none;
+  }
   /*---------------------HELP----------------------*/
+  .help h4 {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  .help__container {
+    gap: 42px;
+  }
   .help__list {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-    width: 100%;
+    gap: 30px 0;
   }
   .help__list_card {
     width: 50%;
@@ -823,9 +891,12 @@ p {
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
+    gap: 42px;
   }
   .donation__container h5 {
     text-align: center;
+    letter-spacing: 0.01rem;
+    line-height: 160%;
   }
   .donation__container h4 {
     font-size: 15px;
@@ -837,6 +908,11 @@ p {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    gap: 20px;
+    letter-spacing: 0.01rem;
+  }
+  .donation__dog {
+    margin: 0 20px;
   }
   /*-------------------FOOTER----------------------*/
   .footer__container {
@@ -853,17 +929,15 @@ p {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    gap: 40px;
+    gap: 11px;
     width: 100%;
   }
   .footer__content {
+    margin: 0;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -871,6 +945,14 @@ p {
   }
   .footer__puppy {
     margin-top: 40px;
+    padding: 0 20px;
+    margin: 40px auto 0 auto;
+  }
+  .pets .navigation_button {
+    gap: 10px;
+  }
+  .navigation_button {
+    margin-top: -15px;
   }
 }
 
@@ -918,6 +1000,21 @@ p {
   }
   .pets_scroller {
     gap: 0;
+  }
+  .cards_box {
+    margin: 30px 0;
+  }
+  .pets__container_box {
+    padding-bottom: 75px;
+  }
+  .cards_box__7_item {
+    display: none;
+  }
+  .cards_box__8_item {
+    display: none;
+  }
+  .navigation_button {
+    margin-top: 50px;
   }
   /*---------------------ABOUT---------------------*/
   .about__container {
