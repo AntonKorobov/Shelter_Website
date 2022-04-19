@@ -100,6 +100,7 @@ p {
 }
 
 .header_fixed {
+  background-color: #FFFFFF;
   position: fixed;
   top: 0;
   width: 100%;
@@ -131,15 +132,16 @@ p {
   line-height: 160%;
   color: #CDCDCD;
   text-decoration: none;
+  padding-bottom: 2px;
 }
 
 .header__container .header__nav .header__nav_a_white:hover {
-  text-decoration: underline;
   color: #FAFAFA;
+  border-bottom: 3px solid #F1CDB3;
 }
 
 .header__container .header__nav .first_a {
-  text-decoration: underline;
+  border-bottom: 3px solid #F1CDB3;
 }
 
 .header__container .header__nav ul {
@@ -155,6 +157,19 @@ p {
 
 .header__container .header__nav ul li {
   list-style: none;
+}
+
+.header__nav_a_black {
+  font-size: 15px;
+  line-height: 160%;
+  color: #545454;
+  text-decoration: none;
+  padding-bottom: 2px;
+}
+
+.header__nav_a_black:hover {
+  color: #292929;
+  border-bottom: 3px solid #F1CDB3;
 }
 
 .burger {
@@ -194,18 +209,6 @@ p {
 
 .header_our_pets .title h1 {
   color: #545454;
-}
-
-.header_our_pets .header__nav_a_black {
-  font-size: 15px;
-  line-height: 160%;
-  color: #545454;
-  text-decoration: none;
-}
-
-.header_our_pets .header__nav_a_black:hover {
-  text-decoration: underline;
-  color: #292929;
 }
 
 .title {
