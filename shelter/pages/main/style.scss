@@ -766,9 +766,16 @@ p {
         justify-content: flex-start;
         // width: 100%; //!!!!
         gap: 30px 0;
+        h4 {
+            font-size: 15px;
+        }
     }
     .help__list_card {
         width: 50%;
+        height: 85px;
+    }
+    .help__list_icon {
+        max-width: 50px;
     }
     /*------------------DONATION---------------------*/
     .donation__container {
