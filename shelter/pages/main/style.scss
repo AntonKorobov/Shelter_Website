@@ -131,11 +131,11 @@ p {
         .header__nav_a_white {
             font-size: 15px;
             line-height: 160%;
-            color: $--main-color-light-s;
+            color: $--main-color-dark-s;
             text-decoration: none;
             &:hover {
                 text-decoration: underline;
-                color: $--main-color-light-xl;
+                color: $--main-color-light-s;
             }
         }
         .first_a {
@@ -359,6 +359,10 @@ p {
     align-items: center;
     gap: 9%;
     width: 100%;
+}
+
+.pets__container_box {
+    padding-top: 200px;
 }
 
 .cards_box {

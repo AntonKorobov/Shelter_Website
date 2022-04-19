@@ -129,13 +129,13 @@ p {
 .header__container .header__nav .header__nav_a_white {
   font-size: 15px;
   line-height: 160%;
-  color: #FAFAFA;
+  color: #CDCDCD;
   text-decoration: none;
 }
 
 .header__container .header__nav .header__nav_a_white:hover {
   text-decoration: underline;
-  color: #FFFFFF;
+  color: #FAFAFA;
 }
 
 .header__container .header__nav .first_a {
@@ -389,6 +389,10 @@ p {
           align-items: center;
   gap: 9%;
   width: 100%;
+}
+
+.pets__container_box {
+  padding-top: 200px;
 }
 
 .cards_box {
