@@ -112,6 +112,12 @@ p {
     background-size: cover;
 }
 
+.header_fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
 .header__container {
     padding-top: 0px;
     padding-bottom: 60px;
@@ -649,6 +655,9 @@ p {
         padding-bottom: 0px;
         justify-content: space-between;
     }
+    .header_our_pets {
+        padding-bottom: 25px;
+    }
     .header nav {
         display: none;
     }
@@ -708,12 +717,18 @@ p {
     .card__third_item {
         display: none;
     }
+    .pets__container_box {
+        padding-top: 165px;
+    }
     .pets_scroller {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         gap: 0 80px;
         margin: 42px 0
+    }
+    .cards_box {
+        margin: 42px 0 60px 0;
     }
     .pets_scroller__button {
         margin-top: 20px;
