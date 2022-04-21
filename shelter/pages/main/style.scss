@@ -339,12 +339,12 @@ p {
     text-align: center;
 }
 
-.pets_scroller {
+.pets__scroller {
     display: flex;
     align-items: center;
     gap: 4.4%;
     margin: 60px 0;
-    .pets_scroller__button {
+    .pets__scroller__button {
         min-height: 52px;
         min-width: 52px;
         border: 2px solid $--main-color-primary-light;
@@ -357,12 +357,53 @@ p {
     }
 }
 
-.cards_wrapper {
+.carousel-wrapper {
+    overflow: hidden;
+    padding: 30px 0;
+}
+
+.carousel {
+    position: relative;
+    // left: -100%;
+    // right: -100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // gap: calc((100% - 270*3px)/2);
+}
+
+.carousel__item {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    gap: 9%;
-    width: 100%;
+    flex: 0 0 100%;
+}
+
+@keyframes move-right {
+    from {
+        left: 0;
+    }
+    to {
+        left: +100%;
+    }
+}
+
+.transition-right {
+    animation-name: move-right;
+    animation-duration: 5s;
+}
+
+@keyframes move-left {
+    from {
+        left: 0;
+    }
+    to {
+        left: -100%;
+    }
+}
+
+.transition-left {
+    animation-name: move-left;
+    animation-duration: 5s;
 }
 
 .pets__container_box {
@@ -403,10 +444,12 @@ p {
         letter-spacing: 0.1rem;
     }
     img {
-        width: 100%;
+        // width: 100%;
     }
     &:hover {
         background-color: $--main-color-light-xl;
+        transform: scale(1.05);
+        box-shadow: 0px 0px 10px 5px $--main-color-dark-m;
         .card__button {
             background-color: $--main-color-primary-light;
         }
@@ -719,16 +762,16 @@ p {
     .help__list {
         gap: 50px 0;
     }
-    .card__second_item {
+    .card_second_item {
         display: none;
     }
-    .card__third_item {
+    .card_third_item {
         display: none;
     }
     .pets__container_box {
         padding-top: 165px;
     }
-    .pets_scroller {
+    .pets__scroller {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
@@ -738,10 +781,10 @@ p {
     .cards_box {
         margin: 42px 0 60px 0;
     }
-    .pets_scroller__button {
+    .pets__scroller__button {
         margin-top: 20px;
     }
-    .cards_wrapper {
+    .carousel {
         order: -1;
         width: 100%;
     }
@@ -876,10 +919,10 @@ p {
         justify-content: center;
         // gap: 10%;
     }
-    .card__third_item {
+    .card_third_item {
         display: none;
     }
-    .pets_scroller {
+    .pets__scroller {
         gap: 0;
     }
     .cards_box {

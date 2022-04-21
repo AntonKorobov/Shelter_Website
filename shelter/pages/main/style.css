@@ -356,7 +356,7 @@ p {
   text-align: center;
 }
 
-.pets_scroller {
+.pets__scroller {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -367,7 +367,7 @@ p {
   margin: 60px 0;
 }
 
-.pets_scroller .pets_scroller__button {
+.pets__scroller .pets__scroller__button {
   min-height: 52px;
   min-width: 52px;
   border: 2px solid #FDDCC4;
@@ -376,22 +376,88 @@ p {
   text-decoration: none;
 }
 
-.pets_scroller .pets_scroller__button:hover {
+.pets__scroller .pets__scroller__button:hover {
   background-color: #FDDCC4;
 }
 
-.cards_wrapper {
+.carousel-wrapper {
+  overflow: hidden;
+  padding: 30px 0;
+}
+
+.carousel {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.carousel__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 9%;
-  width: 100%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+}
+
+@-webkit-keyframes move-right {
+  from {
+    left: 0;
+  }
+  to {
+    left: +100%;
+  }
+}
+
+@keyframes move-right {
+  from {
+    left: 0;
+  }
+  to {
+    left: +100%;
+  }
+}
+
+.transition-right {
+  -webkit-animation-name: move-right;
+          animation-name: move-right;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+}
+
+@-webkit-keyframes move-left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes move-left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+.transition-left {
+  -webkit-animation-name: move-left;
+          animation-name: move-left;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
 }
 
 .pets__container_box {
@@ -448,12 +514,12 @@ p {
   letter-spacing: 0.1rem;
 }
 
-.card img {
-  width: 100%;
-}
-
 .card:hover {
   background-color: #FFFFFF;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: 0px 0px 10px 5px #B2B2B2;
+          box-shadow: 0px 0px 10px 5px #B2B2B2;
 }
 
 .card:hover .card__button {
@@ -841,16 +907,16 @@ p {
   .help__list {
     gap: 50px 0;
   }
-  .card__second_item {
+  .card_second_item {
     display: none;
   }
-  .card__third_item {
+  .card_third_item {
     display: none;
   }
   .pets__container_box {
     padding-top: 165px;
   }
-  .pets_scroller {
+  .pets__scroller {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -866,10 +932,10 @@ p {
   .cards_box {
     margin: 42px 0 60px 0;
   }
-  .pets_scroller__button {
+  .pets__scroller__button {
     margin-top: 20px;
   }
-  .cards_wrapper {
+  .carousel {
     -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;
             order: -1;
@@ -1024,10 +1090,10 @@ p {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .card__third_item {
+  .card_third_item {
     display: none;
   }
-  .pets_scroller {
+  .pets__scroller {
     gap: 0;
   }
   .cards_box {
