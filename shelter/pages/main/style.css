@@ -901,16 +901,12 @@ p {
   }
   /*---------------------PETS----------------------*/
   .card {
-    width: 100%;
     margin: 0 auto 0 auto;
   }
-  .help__list {
-    gap: 50px 0;
-  }
-  .card_second_item {
+  .card_2 {
     display: none;
   }
-  .card_third_item {
+  .card_3 {
     display: none;
   }
   .pets__container_box {
@@ -935,7 +931,7 @@ p {
   .pets__scroller__button {
     margin-top: 20px;
   }
-  .carousel {
+  .carousel-wrapper {
     -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;
             order: -1;
@@ -1090,11 +1086,8 @@ p {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .card_third_item {
+  .card_3 {
     display: none;
-  }
-  .pets__scroller {
-    gap: 0;
   }
   .cards_box {
     margin: 30px 0;
