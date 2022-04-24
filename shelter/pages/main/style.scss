@@ -364,8 +364,6 @@ p {
 
 .carousel {
     position: relative;
-    // left: -100%;
-    // right: -100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -389,7 +387,7 @@ p {
 
 .transition-right {
     animation-name: move-right;
-    animation-duration: 5s;
+    animation-duration: 1s;
 }
 
 @keyframes move-left {
@@ -403,7 +401,7 @@ p {
 
 .transition-left {
     animation-name: move-left;
-    animation-duration: 5s;
+    animation-duration: 1s;
 }
 
 .pets__container_box {

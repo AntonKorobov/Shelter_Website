@@ -431,8 +431,8 @@ p {
 .transition-right {
   -webkit-animation-name: move-right;
           animation-name: move-right;
-  -webkit-animation-duration: 5s;
-          animation-duration: 5s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
 }
 
 @-webkit-keyframes move-left {
@@ -456,8 +456,8 @@ p {
 .transition-left {
   -webkit-animation-name: move-left;
           animation-name: move-left;
-  -webkit-animation-duration: 5s;
-          animation-duration: 5s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
 }
 
 .pets__container_box {
