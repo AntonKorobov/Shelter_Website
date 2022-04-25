@@ -13,6 +13,7 @@
     <div class="header_start_screen_wrapper">
         <header class="header">
             <div class="header__container container">
+                <div class="burger__wrapper"></div>
                 <a href="#" class="title">
                     <h1>Cozy House</h1>
                     <p>Shelter for pets in Boston</p>
@@ -33,13 +34,37 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="burger">
+
+                <div class="burger__icon">
                     <div></div>
                     <div></div>
                     <div></div>
                 </div>
+                <nav class="burger__menu">
+                    <div class="title_burger">
+                        <a href="#" class="title">
+                            <h1>Cozy House</h1>
+                            <p>Shelter for pets in Boston</p>
+                        </a>
+                    </div>
+                    <ul>
+                        <li>
+                            <a class="first_a header__nav_a_white" href="#about">About the shelter</a>
+                        </li>
+                        <li>
+                            <a class="header__nav_a_white" href="../../pages/pets/index.html">Our pets</a>
+                        </li>
+                        <li>
+                            <a class="header__nav_a_white" href="#help">Help the shelter</a>
+                        </li>
+                        <li>
+                            <a class="header__nav_a_white" href="#contacts">Contacts</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </header>
+        <script src="script_burger.js"></script>
 
         <section class="start_screen">
             <div class="start_screen__container container">
@@ -243,6 +268,13 @@
             </div>
         </div>
     </footer>
+    <script>
+        document.querySelectorAll('.card').forEach(item => {
+            item.addEventListener('click', event => {
+                alert("К сожалению POPUP элементы еще не работают. Думаю успеть до среды. Спасибо за понимание)");
+            })
+        })
+    </script>
 </body>
 
 </html>

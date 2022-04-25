@@ -51,6 +51,14 @@ body {
     font-style: normal;
 }
 
+.hide_element {
+    visibility: hidden;
+}
+
+.scroll_lock {
+    overflow-y: hidden;
+}
+
 h2 {
     font-family: 'Georgia';
     font-style: normal;
@@ -129,20 +137,6 @@ p {
         font-size: 15px;
         line-height: 160%;
         color: $--main-color-dark-s;
-        .header__nav_a_white {
-            font-size: 15px;
-            line-height: 160%;
-            color: $--main-color-dark-s;
-            text-decoration: none;
-            padding-bottom: 2px;
-            &:hover {
-                color: $--main-color-light-s;
-                border-bottom: 3px solid #F1CDB3;
-            }
-        }
-        .first_a {
-            border-bottom: 3px solid #F1CDB3;
-        }
         ul {
             display: flex;
             justify-content: space-between;
@@ -157,6 +151,22 @@ p {
     // padding-bottom: 0px;
 }
 
+.header__nav_a_white {
+    font-size: 15px;
+    line-height: 160%;
+    color: $--main-color-dark-s;
+    text-decoration: none;
+    padding-bottom: 2px;
+    &:hover {
+        color: $--main-color-light-s;
+        border-bottom: 3px solid #F1CDB3;
+    }
+}
+
+.first_a {
+    border-bottom: 3px solid #F1CDB3;
+}
+
 .header__nav_a_black {
     font-size: 15px;
     line-height: 160%;
@@ -169,8 +179,22 @@ p {
     }
 }
 
-.burger {
+.burger__wrapper {
     display: none;
+    position: fixed;
+    left: 0;
+    width: 1000px;
+    height: 10000px;
+}
+
+.show_element {
+    display: block;
+}
+
+.burger__icon {
+    display: none;
+    z-index: 200; //doesn't works
+    transition-duration: 1.0s;
     div {
         width: 30px;
         height: 2px;
@@ -179,14 +203,50 @@ p {
     }
 }
 
-.burger_dark {
-    display: none;
+.rotation-90 {
+    transform: rotate(90deg);
+}
+
+.burger__icon_dark {
     div {
-        width: 30px;
-        height: 2px;
         background-color: $--main-color-dark-3xl;
-        margin: 8px 0;
     }
+}
+
+.burger__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 320px;
+    min-height: 100%;
+    background-color: $--main-color-dark-3xl;
+    transition: all 0.6s ease-in-out;
+    transform: translateX(100%);
+    ul {
+        margin-top: 158px;
+        text-align: center;
+        li {
+            list-style: none;
+            margin: 43px 0;
+            a {
+                font-size: 32px;
+                line-height: 160%;
+                color: $--main-color-light-xl;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.burger_menu_open {
+    box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.35);
+    // border-left: 1000px solid rgba(0, 0, 0, .0);//Does'nt work
+    transform: translateX(0%);
+}
+
+.title_burger {
+    display: inline-block;
+    margin: 30px 0 0 30px;
 }
 
 .header_our_pets {
@@ -440,9 +500,6 @@ p {
         line-height: 130%;
         color: $--main-color-dark-3xl;
         letter-spacing: 0.1rem;
-    }
-    img {
-        // width: 100%;
     }
     &:hover {
         background-color: $--main-color-light-xl;
@@ -707,14 +764,10 @@ p {
     .header_our_pets {
         padding-bottom: 25px;
     }
-    .header nav {
+    .header__nav {
         display: none;
     }
-    .burger {
-        display: block;
-        margin-right: 43px;
-    }
-    .burger_dark {
+    .burger__icon {
         display: block;
         margin-right: 43px;
     }

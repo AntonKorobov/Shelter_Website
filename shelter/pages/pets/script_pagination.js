@@ -1,9 +1,3 @@
-// const BTN_LEFT = document.querySelector("#pets__scroller__button_left");
-// const BTN_RIGHT = document.querySelector("#pets__scroller__button_right");
-// const CAROUSEL = document.querySelector("#carousel");
-// const ITEM_LEFT = document.querySelector("#item-left");
-// const ITEM_RIGHT = document.querySelector("#item-right");
-
 const PAGINATOR = document.querySelector(".cards_box");
 const BTN_PAGE = document.querySelector(".paginator_page");
 const BTN_LEFT = document.querySelector(".paginator_left");
@@ -159,14 +153,14 @@ let currentPage = 1;
 BTN_PAGE.innerHTML = currentPage;
 
 //GENERATE PAGES. SHOW FIRST PAGE-----------------------------------------------
+if (window.matchMedia('(min-width: 1024px)').matches) {
+    PAGINATOR.innerHTML = (generateMatrixOfCards(8)[0].join(""));
+}
 if (window.matchMedia('(max-width: 1023px) and (min-width: 750px)').matches) {
     PAGINATOR.innerHTML = (generateMatrixOfCards(6)[0].join(""));
 }
 if (window.matchMedia('(min-width: 320px) and (max-width: 749px)').matches) {
     PAGINATOR.innerHTML = (generateMatrixOfCards(3)[0].join(""));
-}
-if (window.matchMedia('(min-width: 1024px)').matches) {
-    PAGINATOR.innerHTML = (generateMatrixOfCards(8)[0].join(""));
 }
 //------------------------------------------------------------------------------
 

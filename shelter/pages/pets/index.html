@@ -12,6 +12,7 @@
 <body>
     <header class="header header_fixed">
         <div class="header_our_pets header__container container">
+            <div class="burger__wrapper"></div>
             <a href="../../pages/main/index.html" class="title">
                 <h1>Cozy House</h1>
                 <p>Shelter for pets in Boston</p>
@@ -32,13 +33,36 @@
                     </li>
                 </ul>
             </nav>
-            <div class="burger_dark">
+            <div class="burger__icon burger__icon_dark">
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
+            <nav class="burger__menu">
+                <div class="title_burger">
+                    <a href="#" class="title">
+                        <h1>Cozy House</h1>
+                        <p>Shelter for pets in Boston</p>
+                    </a>
+                </div>
+                <ul>
+                    <li>
+                        <a class="header__nav_a_black" href="../../pages/main/index.html">About the shelter</a>
+                    </li>
+                    <li>
+                        <a class="first_a header__nav_a_black" href="#stay_here">Our pets</a>
+                    </li>
+                    <li>
+                        <a class="header__nav_a_black" href="../../pages/main/index.html#help">Help the shelter</a>
+                    </li>
+                    <li>
+                        <a class="header__nav_a_black" href="#contacts">Contacts</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </header>
+    <script src="../main/script_burger.js"></script>
     <main>
         <section class="pets" id="pets">
             <div class="pets__container pets__container_box container ">
@@ -93,6 +117,13 @@
             </div>
         </div>
     </footer>
+    <script>
+        document.querySelectorAll('.card').forEach(item => {
+            item.addEventListener('click', event => {
+                alert("К сожалению POPUP элементы еще не работают. Думаю успеть до среды. Спасибо за понимание)");
+            })
+        })
+    </script>
 </body>
 
 </html>
