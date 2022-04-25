@@ -655,6 +655,10 @@ p {
     //     border: 2px solid $--main-color-primary-light;
     //     background-color: $--main-color-primary-light;
     // }
+    .navigation_button_inactive {
+        border: 2px solid $--main-color-dark-s;
+        background-color: none;
+    }
     .navigation_button_active {
         border: 2px solid $--main-color-primary-light;
         background-color: $--main-color-light-l;
@@ -662,10 +666,6 @@ p {
             cursor: pointer;
             background-color: $--main-color-primary-light;
         }
-    }
-    .navigation_button_inactive {
-        border: 2px solid $--main-color-dark-s;
-        background-color: none;
     }
 }
 
@@ -782,21 +782,6 @@ p {
     .carousel-wrapper {
         order: -1;
         width: 100%;
-    }
-    .cards_box__4_item {
-        display: none;
-    }
-    .cards_box__5_item {
-        display: none;
-    }
-    .cards_box__6_item {
-        display: none;
-    }
-    .cards_box__7_item {
-        display: none;
-    }
-    .cards_box__8_item {
-        display: none;
     }
     /*---------------------HELP----------------------*/
     .help {
@@ -926,12 +911,6 @@ p {
     }
     .pets__container_box {
         padding-bottom: 75px;
-    }
-    .cards_box__7_item {
-        display: none;
-    }
-    .cards_box__8_item {
-        display: none;
     }
     .navigation_button {
         margin-top: 50px;

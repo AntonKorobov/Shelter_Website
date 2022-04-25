@@ -795,6 +795,11 @@ p {
   text-align: center;
 }
 
+.pets .navigation_button_inactive {
+  border: 2px solid #CDCDCD;
+  background-color: none;
+}
+
 .pets .navigation_button_active {
   border: 2px solid #FDDCC4;
   background-color: #F6F6F6;
@@ -803,11 +808,6 @@ p {
 .pets .navigation_button_active:hover {
   cursor: pointer;
   background-color: #FDDCC4;
-}
-
-.pets .navigation_button_inactive {
-  border: 2px solid #CDCDCD;
-  background-color: none;
 }
 
 /*----------------------MIN_WIDTH--------------------------------
@@ -936,21 +936,6 @@ p {
         -ms-flex-order: -1;
             order: -1;
     width: 100%;
-  }
-  .cards_box__4_item {
-    display: none;
-  }
-  .cards_box__5_item {
-    display: none;
-  }
-  .cards_box__6_item {
-    display: none;
-  }
-  .cards_box__7_item {
-    display: none;
-  }
-  .cards_box__8_item {
-    display: none;
   }
   /*---------------------HELP----------------------*/
   .help h4 {
@@ -1094,12 +1079,6 @@ p {
   }
   .pets__container_box {
     padding-bottom: 75px;
-  }
-  .cards_box__7_item {
-    display: none;
-  }
-  .cards_box__8_item {
-    display: none;
   }
   .navigation_button {
     margin-top: 50px;
