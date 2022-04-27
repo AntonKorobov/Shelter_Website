@@ -8,10 +8,12 @@ const PET_AGE = document.querySelector('.modal-window__content_pet-age');
 const PET_INOCULATIONS = document.querySelector('.modal-window__content_pet-inoculations');
 const PET_DISEASES = document.querySelector('.modal-window__content_pet-diseases');
 const PET_PARASITES = document.querySelector('.modal-window__content_pet-parasites');
+const EXIT_BUTTON = document.querySelector('.modal-window__exit-button');
 
 findCards();
 
 MODAL_WINDOW_BACKGROUND.addEventListener('click', closeModalWindow);
+EXIT_BUTTON.addEventListener('click', closeModalWindow);
 
 function findCards() {
     document.querySelectorAll('.card').forEach(item => {
