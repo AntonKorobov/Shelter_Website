@@ -52,12 +52,17 @@ function showName(item) {
     let petDiseases = cardBase[petBaseCardNumber]["diseases"];
     let petParasites = cardBase[petBaseCardNumber]["parasites"];
 
+
+
     PET_IMAGE.src = petImgLink;
     PET_NAME.innerHTML = petName;
-    PET_BREAD.innerHTML = petType + petBread;
+    PET_BREAD.innerHTML = petType + " - " + petBread;
     PET_DESCRIPTION.innerHTML = petDescription;
     PET_AGE.innerHTML = "<b>Age: </b>" + petAge;
     PET_INOCULATIONS.innerHTML = "<b>Inoculation: </b>" + petInoculations;
     PET_DISEASES.innerHTML = "<b>Diseases: </b>" + petDiseases;
     PET_PARASITES.innerHTML = "<b>Parasites: </b>" + petParasites;
+    // if (window.matchMedia('(min-width: 320px) and (max-width: 749px)').matches) {
+    //     PET_IMAGE.src = "";
+    // }
 };

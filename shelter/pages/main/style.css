@@ -127,18 +127,19 @@ p {
 }
 
 .modal-window {
+  max-width: 900px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 30px;
+  margin: 70px;
   background: #fff;
-  max-width: 100%;
   -webkit-transition: opacity 0.15s ease 0s, -webkit-transform 0.15s ease 0s;
   transition: opacity 0.15s ease 0s, -webkit-transform 0.15s ease 0s;
   transition: transform 0.15s ease 0s, opacity 0.15s ease 0s;
@@ -146,15 +147,7 @@ p {
   -webkit-transform: scale(0);
           transform: scale(0);
   z-index: 300;
-  border-radius: 9px;
-}
-
-.modal-window__pet-image {
-  min-width: 500px;
-}
-
-.modal-window__content {
-  max-width: 351px;
+  border-radius: 10px;
 }
 
 .modal-window_active {
@@ -191,11 +184,11 @@ p {
 }
 
 .modal-window__exit-button {
-  position: relative;
+  position: absolute;
   top: -50px;
-  left: +50px;
-  width: 52px;
-  height: 52px;
+  right: -50px;
+  min-width: 52px;
+  min-height: 52px;
   border-radius: 9999px;
   border: 2px solid #FDDCC4;
   z-index: 300;
@@ -205,6 +198,60 @@ p {
 .modal-window__exit-button:hover {
   cursor: pointer;
   background-color: #FDDCC4;
+}
+
+.modal-window__pet-image {
+  max-height: 500px;
+  border-radius: 9px;
+}
+
+.modal-window__content {
+  max-width: 500px;
+  text-align: left;
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06rem;
+  margin-right: 9px;
+  padding: 50px 0;
+}
+
+.modal-window__content .modal-window__content_pet-name {
+  margin: 0px 0 10px 0;
+  text-align: left;
+}
+
+.modal-window__content .modal-window__content_pet-description {
+  margin: 40px 0 40px 0;
+}
+
+.modal-window__content ul {
+  margin-left: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: 88px;
+}
+
+.modal-window__content li {
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 749px) {
+  .modal-window {
+    margin: 10px;
+  }
+  .modal-window__pet-image {
+    max-height: 500px;
+    display: none;
+  }
+  .modal-window__content {
+    margin: 0 9px;
+  }
+  .modal-window__exit-button {
+    display: none;
+  }
 }
 
 /*---------------------HEADER--------------------*/

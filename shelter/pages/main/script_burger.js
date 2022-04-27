@@ -10,6 +10,10 @@ CLOSE_ARIA.addEventListener("click", closeMenu);
 BURGER_MENU.addEventListener("click", closeMenu);
 
 function openMenu() {
+    if (BURGER_MENU.classList.contains("burger_menu_open")) {
+        closeMenu();
+        return
+    }
     CLOSE_ARIA.classList.add("burger_show_element")
     WINDOW.classList.add("scroll_lock");
     BURGER_MENU.classList.add("burger_menu_open");

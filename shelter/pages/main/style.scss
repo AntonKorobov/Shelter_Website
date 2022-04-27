@@ -132,25 +132,17 @@ p {
 }
 
 .modal-window {
+    max-width: 900px;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     gap: 30px;
+    margin: 70px;
     background: #fff;
-    // width: 600px;
-    max-width: 100%;
     transition: transform 0.15s ease 0s, opacity 0.15s ease 0s;
     transform: scale(0);
     z-index: 300;
-    border-radius: 9px;
-}
-
-.modal-window__pet-image {
-    min-width: 500px; //!!!!Adaptive
-}
-
-.modal-window__content {
-    max-width: 351px;
+    border-radius: 10px;
 }
 
 .modal-window_active {
@@ -186,11 +178,11 @@ p {
 }
 
 .modal-window__exit-button {
-    position: relative;
+    position: absolute;
     top: -50px;
-    left: +50px;
-    width: 52px;
-    height: 52px;
+    right: -50px;
+    min-width: 52px;
+    min-height: 52px;
     border-radius: 9999px;
     border: 2px solid $--main-color-primary-light;
     z-index: 300;
@@ -201,22 +193,55 @@ p {
     }
 }
 
-// <div class="modal-window-background">
-//                 <div class="modal-window">
-//                     <img class="modal-window__pet-image" alt="">
-//                     <div class="modal-window__content">
-//                         <h3 class="modal-window__content_pet-bread"></h3>
-//                         <p class="modal-window__content_pet-name"></p>
-//                         <p class="modal-window__content_pet-description"></p>
-//                         <ul>
-//                             <li class="modal-window__content_pet-age"></li>
-//                             <li class="modal-window__content_pet-inoculations"></li>
-//                             <li class="modal-window__content_pet-diseases"></li>
-//                             <li class="modal-window__content_pet-parasites"></li>
-//                         </ul>
-//                     </div>
-//                 </div>
-//             </div>
+.modal-window__pet-image {
+    max-height: 500px;
+    border-radius: 9px;
+}
+
+.modal-window__content {
+    max-width: 500px;
+    text-align: left;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06rem;
+    margin-right: 9px;
+    padding: 50px 0;
+    .modal-window__content_pet-name {
+        margin: 0px 0 10px 0;
+        text-align: left;
+    }
+    .modal-window__content_pet-description {
+        margin: 40px 0 40px 0;
+    }
+    ul {
+        margin-left: 20px;
+        box-sizing: border-box;
+        margin-bottom: 88px;
+    }
+    li {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (min-width: 320px) and(max-width: 749px) {
+    .modal-window {
+        margin: 10px;
+    }
+    .modal-window__pet-image {
+        max-height: 500px;
+        display: none;
+    }
+    .modal-window__content {
+        margin: 0 9px;
+    }
+    .modal-window__exit-button {
+        display: none;
+    }
+}
+
 
 /*---------------------HEADER--------------------*/
 
