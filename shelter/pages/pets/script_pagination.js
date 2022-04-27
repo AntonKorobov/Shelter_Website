@@ -107,6 +107,7 @@ const pageLeft = () => {
         BTN_LEFT.classList.remove("navigation_button_active");
         BTN_START.classList.remove("navigation_button_active");
     }
+    findCards();
 }
 
 const pageStart = () => {
@@ -119,6 +120,7 @@ const pageStart = () => {
     BTN_START.classList.remove("navigation_button_active");
     BTN_RIGHT.classList.add("navigation_button_active");
     BTN_FINISH.classList.add("navigation_button_active");
+    findCards();
 }
 
 const pageRight = () => {
@@ -133,6 +135,7 @@ const pageRight = () => {
         BTN_RIGHT.classList.remove("navigation_button_active");
         BTN_FINISH.classList.remove("navigation_button_active");
     }
+    findCards();
 }
 
 const pageFinish = () => {
@@ -145,6 +148,7 @@ const pageFinish = () => {
     BTN_START.classList.add("navigation_button_active");
     BTN_RIGHT.classList.remove("navigation_button_active");
     BTN_FINISH.classList.remove("navigation_button_active");
+    findCards();
 }
 
 const listOfPages = [];

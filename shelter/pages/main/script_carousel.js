@@ -169,4 +169,5 @@ CAROUSEL.addEventListener("animationend", (animationEvent) => {
 
     BTN_LEFT.addEventListener("click", moveLeft);
     BTN_RIGHT.addEventListener("click", moveRight);
+    findCards();
 });
