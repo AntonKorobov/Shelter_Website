@@ -10,7 +10,7 @@ CLOSE_ARIA.addEventListener("click", closeMenu);
 BURGER_MENU.addEventListener("click", closeMenu);
 
 function openMenu() {
-    CLOSE_ARIA.classList.add("show_element")
+    CLOSE_ARIA.classList.add("burger_show_element")
     WINDOW.classList.add("scroll_lock");
     BURGER_MENU.classList.add("burger_menu_open");
     BTN_BURGER.classList.add("rotation-90");
@@ -19,7 +19,7 @@ function openMenu() {
 
 function closeMenu() {
     if (BURGER_MENU.classList.contains("burger_menu_open")) {
-        CLOSE_ARIA.classList.remove("show_element");
+        CLOSE_ARIA.classList.remove("burger_show_element");
         WINDOW.classList.remove("scroll_lock");
         BURGER_MENU.classList.remove("burger_menu_open");
         BTN_BURGER.classList.remove("rotation-90");

@@ -111,6 +111,95 @@ p {
 }
 
 
+/*---------------------MODAL_WINDOW--------------------*/
+
+.modal-window-wrapper {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    // -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    z-index: 100;
+}
+
+.modal-window {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    background: #fff;
+    // width: 600px;
+    max-width: 100%;
+    transition: transform 0.15s ease 0s, opacity 0.15s ease 0s;
+    transform: scale(0);
+    z-index: 300;
+}
+
+.modal-window__pet-image {
+    min-width: 500px; //!!!!Adaptive
+}
+
+.modal-window__content {
+    max-width: 351px;
+}
+
+.modal-window_active {
+    visibility: visible;
+}
+
+.modal-window_active .modal-window {
+    transform: scale(1);
+    // opacity: 1;
+}
+
+.modal-window-background {
+    position: fixed;
+    border: none;
+    display: block;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 200;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    background-color: black;
+}
+
+.modal-window-background_active {
+    pointer-events: auto;
+    opacity: 0.6;
+}
+
+// <div class="modal-window-background">
+//                 <div class="modal-window">
+//                     <img class="modal-window__pet-image" alt="">
+//                     <div class="modal-window__content">
+//                         <h3 class="modal-window__content_pet-bread"></h3>
+//                         <p class="modal-window__content_pet-name"></p>
+//                         <p class="modal-window__content_pet-description"></p>
+//                         <ul>
+//                             <li class="modal-window__content_pet-age"></li>
+//                             <li class="modal-window__content_pet-inoculations"></li>
+//                             <li class="modal-window__content_pet-diseases"></li>
+//                             <li class="modal-window__content_pet-parasites"></li>
+//                         </ul>
+//                     </div>
+//                 </div>
+//             </div>
+
 /*---------------------HEADER--------------------*/
 
 .header_start_screen_wrapper {
@@ -187,7 +276,7 @@ p {
     height: 10000px;
 }
 
-.show_element {
+.burger_show_element {
     display: block;
 }
 
@@ -503,7 +592,7 @@ p {
     }
     &:hover {
         background-color: $--main-color-light-xl;
-        transform: scale(1.05);
+        // transform: scale(1.05);
         box-shadow: 0px 0px 10px 5px $--main-color-dark-m;
         .card__button {
             background-color: $--main-color-primary-light;
@@ -1012,3 +1101,7 @@ p {
         gap: 50px 0;
     }
 }
+
+.show_element {
+    visibility: visible;
+} //!!!!!!!!!

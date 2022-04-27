@@ -64,7 +64,9 @@
                 </nav>
             </div>
         </header>
+        <!-- BURGER -->
         <script src="script_burger.js"></script>
+        <!-- BURGER -->
 
         <section class="start_screen">
             <div class="start_screen__container container">
@@ -104,51 +106,51 @@
                     <div class="carousel-wrapper">
                         <div class="carousel" id="carousel">
                             <div class="carousel__item" id="item-left">
-                                <a href="#" class="card card_1">
+                                <a class="card card_1">
                                     <img alt="">
                                     <p></p>
                                     <div class="card__button">Learn more</div>
                                 </a>
-                                <a href="#" class="card card_2">
+                                <a class="card card_2">
                                     <img alt="">
                                     <p></p>
                                     <div class="card__button">Learn more</div>
                                 </a>
-                                <a href="#" class="card card_3">
+                                <a class="card card_3">
                                     <img alt="">
                                     <p></p>
                                     <div class="card__button">Learn more</div>
                                 </a>
                             </div>
                             <div class="carousel__item" id="item-active">
-                                <a href="#" class="card card_1">
+                                <a class="card card_1">
                                     <img alt="">
                                     <p></p>
                                     <div class="card__button">Learn more</div>
                                 </a>
-                                <a href="#" class="card card_2">
+                                <a class="card card_2">
                                     <img alt="">
                                     <p></p>
                                     <div class="card__button">Learn more</div>
                                 </a>
-                                <a href="#" class="card card_3">
+                                <a class="card card_3">
                                     <img alt="">
                                     <p></p>
                                     <div class="card__button">Learn more</div>
                                 </a>
                             </div>
                             <div class="carousel__item" id="item-right">
-                                <a href="#" class="card card_1">
+                                <a class="card card_1">
                                     <img alt="">
                                     <p></p>
                                     <div class="card__button">Learn more</div>
                                 </a>
-                                <a href="#" class="card card_2">
+                                <a class="card card_2">
                                     <img alt="">
                                     <p></p>
                                     <div class="card__button">Learn more</div>
                                 </a>
-                                <a href="#" class="card card_3">
+                                <a class="card card_3">
                                     <img alt="">
                                     <p></p>
                                     <div class="card__button">Learn more</div>
@@ -166,6 +168,26 @@
                     <a href="../../pages/pets/index.html">Get to know the rest</a>
                 </div>
             </div>
+
+            <div class="modal-window-background">
+                <div class="modal-window">
+                    <img class="modal-window__pet-image" alt="">
+                    <div class="modal-window__content">
+                        <h3 class="modal-window__content_pet-name"></h3>
+                        <p class="modal-window__content_pet-bread"></p>
+                        <p class="modal-window__content_pet-description"></p>
+                        <ul>
+                            <li class="modal-window__content_pet-age"></li>
+                            <li class="modal-window__content_pet-inoculations"></li>
+                            <li class="modal-window__content_pet-diseases"></li>
+                            <li class="modal-window__content_pet-parasites"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- POPUP -->
+            <script src="script_popup.js"></script>
+            <!-- POPUP -->
         </section>
 
         <section class="help" id="help">
@@ -268,13 +290,6 @@
             </div>
         </div>
     </footer>
-    <script>
-        document.querySelectorAll('.card').forEach(item => {
-            item.addEventListener('click', event => {
-                alert("К сожалению POPUP элементы еще не работают. Думаю успеть до среды. Спасибо за понимание)");
-            })
-        })
-    </script>
 </body>
 
 </html>

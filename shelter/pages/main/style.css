@@ -99,6 +99,95 @@ p {
   padding-bottom: 100px;
 }
 
+/*---------------------MODAL_WINDOW--------------------*/
+.modal-window-wrapper {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 30px 0;
+  z-index: 100;
+}
+
+.modal-window {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 30px;
+  background: #fff;
+  max-width: 100%;
+  -webkit-transition: opacity 0.15s ease 0s, -webkit-transform 0.15s ease 0s;
+  transition: opacity 0.15s ease 0s, -webkit-transform 0.15s ease 0s;
+  transition: transform 0.15s ease 0s, opacity 0.15s ease 0s;
+  transition: transform 0.15s ease 0s, opacity 0.15s ease 0s, -webkit-transform 0.15s ease 0s;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  z-index: 300;
+}
+
+.modal-window__pet-image {
+  min-width: 500px;
+}
+
+.modal-window__content {
+  max-width: 351px;
+}
+
+.modal-window_active {
+  visibility: visible;
+}
+
+.modal-window_active .modal-window {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.modal-window-background {
+  position: fixed;
+  border: none;
+  display: block;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 200;
+  opacity: 0;
+  -webkit-transition: opacity 0.15s ease;
+  transition: opacity 0.15s ease;
+  background-color: black;
+}
+
+.modal-window-background_active {
+  pointer-events: auto;
+  opacity: 0.6;
+}
+
 /*---------------------HEADER--------------------*/
 .header_start_screen_wrapper {
   background-image: url("../../assets/start-screen-background.jpg");
@@ -188,7 +277,7 @@ p {
   height: 10000px;
 }
 
-.show_element {
+.burger_show_element {
   display: block;
 }
 
@@ -579,8 +668,6 @@ p {
 
 .card:hover {
   background-color: #FFFFFF;
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
   -webkit-box-shadow: 0px 0px 10px 5px #B2B2B2;
           box-shadow: 0px 0px 10px 5px #B2B2B2;
 }
@@ -1197,5 +1284,9 @@ p {
   .help__list {
     gap: 50px 0;
   }
+}
+
+.show_element {
+  visibility: visible;
 }
 /*# sourceMappingURL=style.css.map */
