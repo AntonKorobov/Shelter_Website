@@ -363,11 +363,15 @@ p {
             a {
                 font-size: 32px;
                 line-height: 160%;
-                color: $--main-color-light-xl;
+                // color: $--main-color-light-xl;
                 text-decoration: none;
             }
         }
     }
+}
+
+.burger__menu_white {
+    background-color: $--main-color-light-l;
 }
 
 .burger_menu_open {
@@ -634,6 +638,7 @@ p {
         letter-spacing: 0.1rem;
     }
     &:hover {
+        cursor: pointer;
         background-color: $--main-color-light-xl;
         // transform: scale(1.05);
         box-shadow: 0px 0px 10px 5px $--main-color-dark-m;
