@@ -267,6 +267,7 @@ p {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 999;
 }
 
 .header__container {
@@ -744,6 +745,73 @@ p {
 
 .card:hover .card__button {
   background-color: #FDDCC4;
+}
+
+.card_close {
+  -webkit-transform: perspective(1000px) rotateY(90deg);
+          transform: perspective(1000px) rotateY(90deg);
+}
+
+.card_close-flip {
+  -webkit-animation-name: close-flip;
+          animation-name: close-flip;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-transform: perspective(1000px) rotateY(90deg);
+          transform: perspective(1000px) rotateY(90deg);
+}
+
+@-webkit-keyframes close-flip {
+  from {
+    -webkit-transform: perspective(1000px) rotateY(0deg);
+            transform: perspective(1000px) rotateY(0deg);
+  }
+  to {
+    -webkit-transform: perspective(1000px) rotateY(90deg);
+            transform: perspective(1000px) rotateY(90deg);
+  }
+}
+
+@keyframes close-flip {
+  from {
+    -webkit-transform: perspective(1000px) rotateY(0deg);
+            transform: perspective(1000px) rotateY(0deg);
+  }
+  to {
+    -webkit-transform: perspective(1000px) rotateY(90deg);
+            transform: perspective(1000px) rotateY(90deg);
+  }
+}
+
+.card_open-flip {
+  -webkit-animation-name: open-flip;
+          animation-name: open-flip;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-transform: perspective(1000px) rotateY(0deg);
+          transform: perspective(1000px) rotateY(0deg);
+}
+
+@-webkit-keyframes open-flip {
+  from {
+    -webkit-transform: perspective(1000px) rotateY(-90deg);
+            transform: perspective(1000px) rotateY(-90deg);
+  }
+  to {
+    -webkit-transform: perspective(1000px) rotateY(0deg);
+            transform: perspective(1000px) rotateY(0deg);
+  }
+}
+
+@keyframes open-flip {
+  from {
+    -webkit-transform: perspective(1000px) rotateY(-90deg);
+            transform: perspective(1000px) rotateY(-90deg);
+  }
+  to {
+    -webkit-transform: perspective(1000px) rotateY(0deg);
+            transform: perspective(1000px) rotateY(0deg);
+  }
 }
 
 .pets__button {

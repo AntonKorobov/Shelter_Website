@@ -5,6 +5,11 @@ const BTN_RIGHT = document.querySelector(".paginator_right");
 const BTN_START = document.querySelector(".paginator_start");
 const BTN_FINISH = document.querySelector(".paginator_finish");
 
+BTN_LEFT.addEventListener("click", pageLeft);
+BTN_RIGHT.addEventListener("click", pageRight);
+BTN_START.addEventListener("click", pageStart);
+BTN_FINISH.addEventListener("click", pageFinish);
+
 const cardBase = [{
         "name": "Jennifer",
         "img": "../../assets/pets-jennifer.png",
@@ -95,22 +100,50 @@ const cardBase = [{
     },
 ]
 
-const pageLeft = () => {
+function pageLeft() {
     if (currentPage == 1) return
     currentPage--;
-    PAGINATOR.innerHTML = "";
-    PAGINATOR.innerHTML = listOfPages[currentPage - 1].join("");
-    BTN_PAGE.innerHTML = currentPage;
-    BTN_RIGHT.classList.add("navigation_button_active");
-    BTN_FINISH.classList.add("navigation_button_active");
-    if (currentPage == 1) {
-        BTN_LEFT.classList.remove("navigation_button_active");
-        BTN_START.classList.remove("navigation_button_active");
-    }
-    findCards();
+
+    let stepTimer = 0;
+    document.querySelectorAll('.card').forEach(item => {
+        setTimeout(function() {
+            item.classList.add("card_close-flip");
+        }, stepTimer);
+        stepTimer += 100;
+    })
+
+    document.querySelectorAll('.card')[document.querySelectorAll('.card').length - 1].addEventListener("animationend", () => { //maybe change when the last card animated?
+        PAGINATOR.innerHTML = "";
+        PAGINATOR.innerHTML = listOfPages[currentPage - 1].join("");
+        BTN_PAGE.innerHTML = currentPage;
+        BTN_RIGHT.classList.add("navigation_button_active");
+        BTN_FINISH.classList.add("navigation_button_active");
+        if (currentPage == 1) {
+            BTN_LEFT.classList.remove("navigation_button_active");
+            BTN_START.classList.remove("navigation_button_active");
+        }
+        findCards();
+
+        stepTimer = 0;
+        document.querySelectorAll('.card').forEach(item => {
+            item.classList.add("card_close");
+            setTimeout(function() {
+                item.classList.add("card_open-flip");
+                item.addEventListener("animationend", removeAnimation);
+
+                function removeAnimation() {
+                    item.classList.remove("card_open-flip");
+                    item.classList.remove("card_close-flip");
+                    item.removeEventListener("animationend", removeAnimation);
+                    item.classList.remove("card_close");
+                }
+            }, stepTimer);
+            stepTimer += 100;
+        })
+    })
 }
 
-const pageStart = () => {
+function pageStart() {
     if (currentPage == 1) return
     currentPage = 1;
     PAGINATOR.innerHTML = "";
@@ -123,22 +156,50 @@ const pageStart = () => {
     findCards();
 }
 
-const pageRight = () => {
+function pageRight() {
     if (currentPage == listOfPages.length) return
     BTN_LEFT.classList.add("navigation_button_active");
     BTN_START.classList.add("navigation_button_active");
     currentPage++;
-    PAGINATOR.innerHTML = "";
-    PAGINATOR.innerHTML = listOfPages[currentPage - 1].join("");
-    BTN_PAGE.innerHTML = currentPage;
-    if (currentPage == listOfPages.length) {
-        BTN_RIGHT.classList.remove("navigation_button_active");
-        BTN_FINISH.classList.remove("navigation_button_active");
-    }
-    findCards();
+
+    let stepTimer = 0;
+    document.querySelectorAll('.card').forEach(item => {
+        setTimeout(function() {
+            item.classList.add("card_close-flip");
+        }, stepTimer);
+        stepTimer += 100;
+    })
+
+    document.querySelectorAll('.card')[document.querySelectorAll('.card').length - 1].addEventListener("animationend", () => {
+        PAGINATOR.innerHTML = "";
+        PAGINATOR.innerHTML = listOfPages[currentPage - 1].join("");
+        BTN_PAGE.innerHTML = currentPage;
+        if (currentPage == listOfPages.length) {
+            BTN_RIGHT.classList.remove("navigation_button_active");
+            BTN_FINISH.classList.remove("navigation_button_active");
+        }
+        findCards();
+
+        stepTimer = 0;
+        document.querySelectorAll('.card').forEach(item => {
+            item.classList.add("card_close");
+            setTimeout(function() {
+                item.classList.add("card_open-flip");
+                item.addEventListener("animationend", removeAnimation);
+
+                function removeAnimation() {
+                    item.classList.remove("card_open-flip");
+                    item.classList.remove("card_close-flip");
+                    item.removeEventListener("animationend", removeAnimation);
+                    item.classList.remove("card_close");
+                }
+            }, stepTimer);
+            stepTimer += 100;
+        })
+    })
 }
 
-const pageFinish = () => {
+function pageFinish() {
     if (currentPage == listOfPages.length) return
     currentPage = listOfPages.length;
     PAGINATOR.innerHTML = "";
@@ -167,11 +228,6 @@ if (window.matchMedia('(min-width: 320px) and (max-width: 749px)').matches) {
     PAGINATOR.innerHTML = (generateMatrixOfCards(3)[0].join(""));
 }
 //------------------------------------------------------------------------------
-
-BTN_LEFT.addEventListener("click", pageLeft);
-BTN_RIGHT.addEventListener("click", pageRight);
-BTN_START.addEventListener("click", pageStart);
-BTN_FINISH.addEventListener("click", pageFinish);
 
 function generateMatrixOfCards(cardsOnPage) {
     const listOfCards = [];
