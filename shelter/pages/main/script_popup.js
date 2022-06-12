@@ -52,8 +52,6 @@ function showName(item) {
     let petDiseases = cardBase[petBaseCardNumber]["diseases"];
     let petParasites = cardBase[petBaseCardNumber]["parasites"];
 
-
-
     PET_IMAGE.src = petImgLink;
     PET_NAME.innerHTML = petName;
     PET_BREAD.innerHTML = petType + " - " + petBread;

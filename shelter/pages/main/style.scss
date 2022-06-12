@@ -621,12 +621,11 @@ p {
   align-items: center;
   max-width: 270px;
   padding-bottom: 30px;
-  /*border: 2px solid $--main-color-primary;*/
+  // border: 2px solid $--main-color-primary;
   border-radius: 9px 9px 0 0;
   background-color: $--main-color-light-s;
   text-decoration: none;
   //   transition: transform 0.5s;
-  // transform: perspective(1000px) rotateY(90deg); //!!!!!!!!
   .card__button {
     padding: 0.68em 2.045em;
     border: 2px solid $--main-color-primary-light;
@@ -648,7 +647,6 @@ p {
     .card__button {
       background-color: $--main-color-primary-light;
     }
-    // transform: perspective(1000px) rotateY(90deg);
   }
 }
 
