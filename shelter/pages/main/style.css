@@ -754,8 +754,8 @@ p {
 .card_close-flip {
   -webkit-animation-name: close-flip;
           animation-name: close-flip;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
+  -webkit-animation-duration: 0.25s;
+          animation-duration: 0.25s;
   -webkit-transform: perspective(1000px) rotateY(90deg);
           transform: perspective(1000px) rotateY(90deg);
 }
@@ -785,8 +785,8 @@ p {
 .card_open-flip {
   -webkit-animation-name: open-flip;
           animation-name: open-flip;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
+  -webkit-animation-duration: 0.25s;
+          animation-duration: 0.25s;
   -webkit-transform: perspective(1000px) rotateY(0deg);
           transform: perspective(1000px) rotateY(0deg);
 }
@@ -819,9 +819,6 @@ p {
   border: none;
   border-radius: 999px;
   padding: 15px 45px;
-}
-
-.pets__button a {
   font-family: 'Georgia';
   font-style: normal;
   font-weight: 400;

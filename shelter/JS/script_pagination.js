@@ -1,3 +1,4 @@
+// let CARDS = document.querySelectorAll('.card');
 const PAGINATOR = document.querySelector(".cards_box");
 const BTN_PAGE = document.querySelector(".paginator_page");
 const BTN_LEFT = document.querySelector(".paginator_left");
@@ -10,8 +11,10 @@ BTN_RIGHT.addEventListener("click", pageRight);
 BTN_START.addEventListener("click", pageStart);
 BTN_FINISH.addEventListener("click", pageFinish);
 
+import { showModalWindowEvent } from '../JS/script_popup.js';
+
 // import cardBase from "../../base/pets_base.json"; //browser doesn't support
-// import cardBase from "../../base/pets_base.json" assert { type: "json" }; //linter doesn' support
+// import cardBase from "../../base/pets_base.json" assert { type: "json" }; //linter doesn't support
 
 const response = await fetch('../../base/pets_base.json');
 const cardBase = await response.json();
@@ -20,13 +23,7 @@ function pageLeft() {
     if (currentPage == 1) return
     currentPage--;
 
-    let stepTimer = 0;
-    document.querySelectorAll('.card').forEach(item => {
-        setTimeout(function() {
-            item.classList.add("card_close-flip");
-        }, stepTimer);
-        stepTimer += 100;
-    })
+    closeCard();
 
     document.querySelectorAll('.card')[document.querySelectorAll('.card').length - 1].addEventListener("animationend", () => { //maybe change when the last card animated?
         PAGINATOR.innerHTML = "";
@@ -38,38 +35,30 @@ function pageLeft() {
             BTN_LEFT.classList.remove("navigation_button_active");
             BTN_START.classList.remove("navigation_button_active");
         }
-        findCards();
+        showModalWindowEvent();
 
-        stepTimer = 0;
-        document.querySelectorAll('.card').forEach(item => {
-            item.classList.add("card_close");
-            setTimeout(function() {
-                item.classList.add("card_open-flip");
-                item.addEventListener("animationend", removeAnimation);
-
-                function removeAnimation() {
-                    item.classList.remove("card_open-flip");
-                    item.classList.remove("card_close-flip");
-                    item.removeEventListener("animationend", removeAnimation);
-                    item.classList.remove("card_close");
-                }
-            }, stepTimer);
-            stepTimer += 100;
-        })
-    })
+        openCard();
+    });
 }
 
 function pageStart() {
     if (currentPage == 1) return
     currentPage = 1;
-    PAGINATOR.innerHTML = "";
-    PAGINATOR.innerHTML = listOfPages[currentPage - 1].join("");
-    BTN_PAGE.innerHTML = currentPage;
-    BTN_LEFT.classList.remove("navigation_button_active");
-    BTN_START.classList.remove("navigation_button_active");
-    BTN_RIGHT.classList.add("navigation_button_active");
-    BTN_FINISH.classList.add("navigation_button_active");
-    findCards();
+
+    closeCard();
+
+    document.querySelectorAll('.card')[document.querySelectorAll('.card').length - 1].addEventListener("animationend", () => {
+        PAGINATOR.innerHTML = "";
+        PAGINATOR.innerHTML = listOfPages[currentPage - 1].join("");
+        BTN_PAGE.innerHTML = currentPage;
+        BTN_LEFT.classList.remove("navigation_button_active");
+        BTN_START.classList.remove("navigation_button_active");
+        BTN_RIGHT.classList.add("navigation_button_active");
+        BTN_FINISH.classList.add("navigation_button_active");
+        showModalWindowEvent();
+
+        openCard();
+    });
 }
 
 function pageRight() {
@@ -78,13 +67,7 @@ function pageRight() {
     BTN_START.classList.add("navigation_button_active");
     currentPage++;
 
-    let stepTimer = 0;
-    document.querySelectorAll('.card').forEach(item => {
-        setTimeout(function() {
-            item.classList.add("card_close-flip");
-        }, stepTimer);
-        stepTimer += 100;
-    })
+    closeCard();
 
     document.querySelectorAll('.card')[document.querySelectorAll('.card').length - 1].addEventListener("animationend", () => {
         PAGINATOR.innerHTML = "";
@@ -94,38 +77,59 @@ function pageRight() {
             BTN_RIGHT.classList.remove("navigation_button_active");
             BTN_FINISH.classList.remove("navigation_button_active");
         }
-        findCards();
+        showModalWindowEvent();
 
-        stepTimer = 0;
-        document.querySelectorAll('.card').forEach(item => {
-            item.classList.add("card_close");
-            setTimeout(function() {
-                item.classList.add("card_open-flip");
-                item.addEventListener("animationend", removeAnimation);
-
-                function removeAnimation() {
-                    item.classList.remove("card_open-flip");
-                    item.classList.remove("card_close-flip");
-                    item.removeEventListener("animationend", removeAnimation);
-                    item.classList.remove("card_close");
-                }
-            }, stepTimer);
-            stepTimer += 100;
-        })
+        openCard();
     })
 }
 
 function pageFinish() {
     if (currentPage == listOfPages.length) return
     currentPage = listOfPages.length;
-    PAGINATOR.innerHTML = "";
-    PAGINATOR.innerHTML = listOfPages[currentPage - 1].join("");
-    BTN_PAGE.innerHTML = currentPage;
-    BTN_LEFT.classList.add("navigation_button_active");
-    BTN_START.classList.add("navigation_button_active");
-    BTN_RIGHT.classList.remove("navigation_button_active");
-    BTN_FINISH.classList.remove("navigation_button_active");
-    findCards();
+
+    closeCard();
+
+    document.querySelectorAll('.card')[document.querySelectorAll('.card').length - 1].addEventListener("animationend", () => {
+        PAGINATOR.innerHTML = "";
+        PAGINATOR.innerHTML = listOfPages[currentPage - 1].join("");
+        BTN_PAGE.innerHTML = currentPage;
+        BTN_LEFT.classList.add("navigation_button_active");
+        BTN_START.classList.add("navigation_button_active");
+        BTN_RIGHT.classList.remove("navigation_button_active");
+        BTN_FINISH.classList.remove("navigation_button_active");
+        showModalWindowEvent();
+
+        openCard();
+    });
+}
+
+function closeCard() {
+    let stepTimer = 0;
+    document.querySelectorAll('.card').forEach(item => {
+        setTimeout(function() {
+            item.classList.add("card_close-flip");
+        }, stepTimer);
+        stepTimer += 50;
+    })
+}
+
+function openCard() {
+    let stepTimer = 0;
+    document.querySelectorAll('.card').forEach(item => {
+        item.classList.add("card_close");
+        setTimeout(function() {
+            item.classList.add("card_open-flip");
+            item.addEventListener("animationend", removeAnimation);
+
+            function removeAnimation() {
+                item.classList.remove("card_open-flip");
+                item.classList.remove("card_close-flip");
+                item.removeEventListener("animationend", removeAnimation);
+                item.classList.remove("card_close");
+            }
+        }, stepTimer);
+        stepTimer += 50;
+    })
 }
 
 const listOfPages = [];
@@ -143,6 +147,7 @@ if (window.matchMedia('(max-width: 1023px) and (min-width: 750px)').matches) {
 if (window.matchMedia('(min-width: 320px) and (max-width: 749px)').matches) {
     PAGINATOR.innerHTML = (generateMatrixOfCards(3)[0].join(""));
 }
+showModalWindowEvent();
 //------------------------------------------------------------------------------
 
 function generateMatrixOfCards(cardsOnPage) {
@@ -167,12 +172,12 @@ function generateMatrixOfCards(cardsOnPage) {
         listOfPages[currPage - 1] = listOfCards.slice(trimStart, trimEnd);
     }
 
-    //Shuffle cards pages
+    //Shuffle pages
     for (let i = 0; i < numberOfPages; i++) {
         shuffle(listOfPages[i]);
     }
 
-    //Shuffle pages
+    //Shuffle cards
     shuffle(listOfPages);
 
     function shuffle(array) {
@@ -181,6 +186,9 @@ function generateMatrixOfCards(cardsOnPage) {
             [array[i], array[j]] = [array[j], array[i]];
         }
     }
+
+    // showModalWindowEvent(); //doesn't work
+    // CARDS = document.querySelectorAll('.card'); //addEvent click every time after generation
 
     return listOfPages;
 }

@@ -1,3 +1,4 @@
+const WINDOW = document.querySelector("body");
 const MODAL_WINDOW_BACKGROUND = document.querySelector('.modal-window-background');
 const MODAL_WINDOW = document.querySelector('.modal-window-wrapper');
 const PET_NAME = document.querySelector('.modal-window__content_pet-name');
@@ -10,15 +11,16 @@ const PET_DISEASES = document.querySelector('.modal-window__content_pet-diseases
 const PET_PARASITES = document.querySelector('.modal-window__content_pet-parasites');
 const EXIT_BUTTON = document.querySelector('.modal-window__exit-button');
 
-findCards();
+const response = await fetch('../../base/pets_base.json');
+const cardBase = await response.json();
 
 MODAL_WINDOW_BACKGROUND.addEventListener('click', closeModalWindow);
 EXIT_BUTTON.addEventListener('click', closeModalWindow);
 
-function findCards() {
+export function showModalWindowEvent() {
     document.querySelectorAll('.card').forEach(item => {
         item.addEventListener('click', event => {
-            showName(item);
+            showInformationByName(item);
             WINDOW.classList.add("scroll_lock");
             MODAL_WINDOW.classList.add("modal-window_active");
             MODAL_WINDOW_BACKGROUND.classList.add("modal-window-background_active");
@@ -32,7 +34,7 @@ function closeModalWindow() {
     MODAL_WINDOW.classList.remove("modal-window_active");
 }
 
-function showName(item) {
+function showInformationByName(item) {
     let petName = item.children[1].innerText;
 
     let petBaseCardNumber;
