@@ -1,0 +1,99 @@
+.start-screen-wrapper {
+  background-image: url('../../assets/start-screen-background.jpg');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header_fixed {
+  background-color: $--main-color-light-xl;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.header__container {
+  padding-top: 0px;
+  padding-bottom: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 60px;
+}
+
+.header__nav {
+  font-size: 15px;
+  line-height: 160%;
+  color: $--main-color-dark-s;
+}
+
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  gap: 35px;
+}
+
+.nav__item {
+  list-style: none;
+}
+
+.title {
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.title__h1 {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 110%;
+  color: $--main-color-primary;
+  margin-bottom: 10px;
+  letter-spacing: 0.2rem;
+}
+
+.title__description {
+  font-size: 14px;
+  line-height: 15px;
+  color: $--main-color-light-xl;
+  letter-spacing: 0.1rem;
+}
+
+.header__our-pets {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: $--main-color-light-xl;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .title__h1 {
+    color: $--main-color-dark-l;
+  }
+  .title__description {
+    color: $--main-color-dark-3xl;
+  }
+}
+
+@media screen and (min-width: 320px) and(max-width: 749px) {
+  .header__container {
+    padding-top: 30px;
+    padding-bottom: 0px;
+    justify-content: space-between;
+  }
+  .header_our_pets {
+    padding-bottom: 25px;
+  }
+  .header__nav {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 750px) {
+  .header__container {
+    padding-top: 30px;
+  }
+}

@@ -48,7 +48,7 @@ body {
   overflow-y: hidden;
 }
 
-h2 {
+.h2 {
   font-family: 'Georgia';
   font-style: normal;
   font-weight: 400;
@@ -87,8 +87,38 @@ h5 {
 p {
   font-size: 15px;
   line-height: 160%;
-  color: #CDCDCD;
+  color: #cdcdcd;
   letter-spacing: 0.01rem;
+}
+
+.a_white {
+  font-size: 15px;
+  line-height: 160%;
+  color: #cdcdcd;
+  text-decoration: none;
+  padding-bottom: 2px;
+}
+
+.a_white:hover {
+  color: #fafafa;
+  border-bottom: 3px solid #f1cdb3;
+}
+
+.a_dark {
+  font-size: 15px;
+  line-height: 160%;
+  color: #545454;
+  text-decoration: none;
+  padding-bottom: 2px;
+}
+
+.a_dark:hover {
+  color: #292929;
+  border-bottom: 3px solid #f1cdb3;
+}
+
+.a_active {
+  border-bottom: 3px solid #f1cdb3;
 }
 
 .container {
@@ -97,6 +127,10 @@ p {
   padding: 0 40px;
   padding-top: 80px;
   padding-bottom: 100px;
+}
+
+.list {
+  list-style-type: none;
 }
 
 /*---------------------MODAL_WINDOW--------------------*/
@@ -190,14 +224,14 @@ p {
   min-width: 52px;
   min-height: 52px;
   border-radius: 9999px;
-  border: 2px solid #FDDCC4;
+  border: 2px solid #fddcc4;
   z-index: 300;
   background-color: rgba(0, 0, 0, 0);
 }
 
 .modal-window__exit-button:hover {
   cursor: pointer;
-  background-color: #FDDCC4;
+  background-color: #fddcc4;
 }
 
 .modal-window__pet-image {
@@ -255,7 +289,7 @@ p {
 }
 
 /*---------------------HEADER--------------------*/
-.header_start_screen_wrapper {
+.start-screen-wrapper {
   background-image: url("../../assets/start-screen-background.jpg");
   background-position: top;
   background-repeat: no-repeat;
@@ -263,7 +297,7 @@ p {
 }
 
 .header_fixed {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   position: fixed;
   top: 0;
   width: 100%;
@@ -285,13 +319,13 @@ p {
   padding-top: 60px;
 }
 
-.header__container .header__nav {
+.header__nav {
   font-size: 15px;
   line-height: 160%;
-  color: #CDCDCD;
+  color: #cdcdcd;
 }
 
-.header__container .header__nav ul {
+.nav__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -302,64 +336,109 @@ p {
   gap: 35px;
 }
 
-.header__container .header__nav ul li {
+.nav__item {
   list-style: none;
 }
 
-.header__nav_a_white {
-  font-size: 15px;
-  line-height: 160%;
-  color: #CDCDCD;
+.title {
+  text-align: center;
   text-decoration: none;
-  padding-bottom: 2px;
+  cursor: pointer;
 }
 
-.header__nav_a_white:hover {
-  color: #FAFAFA;
-  border-bottom: 3px solid #F1CDB3;
+.title__h1 {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 110%;
+  color: #f1cdb3;
+  margin-bottom: 10px;
+  letter-spacing: 0.2rem;
 }
 
-.first_a {
-  border-bottom: 3px solid #F1CDB3;
+.title__description {
+  font-size: 14px;
+  line-height: 15px;
+  color: #ffffff;
+  letter-spacing: 0.1rem;
 }
 
-.header__nav_a_black {
-  font-size: 15px;
-  line-height: 160%;
+.header__our-pets {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #ffffff;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header__our-pets .title__h1 {
   color: #545454;
-  text-decoration: none;
-  padding-bottom: 2px;
 }
 
-.header__nav_a_black:hover {
+.header__our-pets .title__description {
   color: #292929;
-  border-bottom: 3px solid #F1CDB3;
 }
 
-.burger__wrapper {
+@media screen and (min-width: 320px) and (max-width: 749px) {
+  .header__container {
+    padding-top: 30px;
+    padding-bottom: 0px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .header_our_pets {
+    padding-bottom: 25px;
+  }
+  .header__nav {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 750px) {
+  .header__container {
+    padding-top: 30px;
+  }
+}
+
+.burger_open {
+  display: block;
+  -webkit-box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.35);
+          box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.35);
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.burger__menu {
   display: none;
   position: fixed;
   left: 0;
   width: 1000px;
-  height: 10000px;
 }
 
-.burger_show_element {
-  display: block;
+.burger__title {
+  display: inline-block;
+  margin: 30px 0 0 30px;
 }
 
-.burger__icon {
+.burger-icon {
   display: none;
   z-index: 200;
-  -webkit-transition-duration: 1.0s;
-          transition-duration: 1.0s;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
 }
 
-.burger__icon div {
+.burger-icon__symbol {
   width: 30px;
   height: 2px;
-  background-color: #F1CDB3;
+  background-color: #f1cdb3;
   margin: 8px 0;
+}
+
+.burger-icon_dark .burger-icon__symbol {
+  background-color: #292929;
 }
 
 .rotation-90 {
@@ -367,11 +446,7 @@ p {
           transform: rotate(90deg);
 }
 
-.burger__icon_dark div {
-  background-color: #292929;
-}
-
-.burger__menu {
+.burger-menu {
   position: fixed;
   top: 0;
   right: 0;
@@ -384,81 +459,35 @@ p {
           transform: translateX(100%);
 }
 
-.burger__menu ul {
+.burger-menu__list {
   margin-top: 158px;
   text-align: center;
 }
 
-.burger__menu ul li {
+.burger-menu__item {
   list-style: none;
   margin: 43px 0;
 }
 
-.burger__menu ul li a {
+.burger-menu__a {
   font-size: 32px;
   line-height: 160%;
   text-decoration: none;
 }
 
-.burger__menu_white {
-  background-color: #F6F6F6;
+.burger-menu_white {
+  background-color: #f6f6f6;
 }
 
-.burger_menu_open {
-  -webkit-box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.35);
-          box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.35);
-  -webkit-transform: translateX(0%);
-          transform: translateX(0%);
-}
-
-.title_burger {
-  display: inline-block;
-  margin: 30px 0 0 30px;
-}
-
-.header_our_pets {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  background-color: #FFFFFF;
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.header_our_pets .title p {
-  color: #292929;
-}
-
-.header_our_pets .title h1 {
-  color: #545454;
-}
-
-.title {
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.title h1 {
-  font-family: 'Georgia';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 110%;
-  color: #F1CDB3;
-  margin-bottom: 10px;
-  letter-spacing: 0.2rem;
-}
-
-.title p {
-  font-size: 14px;
-  line-height: 15px;
-  color: #FFFFFF;
-  letter-spacing: 0.1rem;
+@media screen and (min-width: 320px) and (max-width: 749px) {
+  .burger__icon {
+    display: block;
+    margin-right: 43px;
+  }
 }
 
 /*-----------------START_SCREEN------------------*/
-.start_screen__container {
+.start-screen__container {
   padding-top: 0;
   padding-bottom: 0;
   display: -webkit-box;
@@ -469,11 +498,11 @@ p {
           justify-content: space-between;
 }
 
-.start_screen__container h2 {
-  color: #FFFFFF;
+.start-screen__h2 {
+  color: #ffffff;
 }
 
-.start_screen__content {
+.start-screen__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -489,23 +518,23 @@ p {
   margin-top: 163px;
 }
 
-.start_screen__content p {
-  color: #CDCDCD;
+.start-screen__description {
+  color: #cdcdcd;
   line-height: 160%;
   letter-spacing: 0.001rem;
 }
 
-.start-screen-puppy {
+.start-screen__img-wrapper {
   min-width: 569px;
 }
 
-.puppy {
+.start-screen__puppy-img {
   width: 100%;
 }
 
-.start_screen__button {
+.start-screen__pets-button {
   text-align: center;
-  background-color: #F1CDB3;
+  background-color: #f1cdb3;
   border: none;
   border-radius: 999px;
   padding: 15px 45px;
@@ -519,13 +548,66 @@ p {
   text-decoration: none;
 }
 
-.start_screen__button:hover {
-  background-color: #FDDCC4;
+.start-screen__pets-button:hover {
+  background-color: #fddcc4;
+}
+
+@media screen and (min-width: 320px) and (max-width: 749px) {
+  .start_screen__container {
+    padding-bottom: 0px;
+    padding-top: 60px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  .start_screen__content {
+    margin: 0 auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    gap: 42px;
+  }
+  .start-screen-puppy {
+    max-width: 569px;
+    min-width: 230px;
+    margin-left: 40px;
+    margin-top: 105px;
+  }
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 750px) {
+  .start_screen__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .start_screen__content {
+    margin-top: 0;
+    margin-bottom: 100px;
+  }
+  .start_screen__button {
+    margin-left: 128px;
+  }
+  .start-screen-puppy {
+    max-width: 569px;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
 }
 
 /*--------------------ABOUT----------------------*/
 .about {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .about__container {
@@ -541,7 +623,7 @@ p {
   gap: 120px;
 }
 
-.about__container h3 {
+.h3 {
   color: #545454;
 }
 
@@ -549,29 +631,48 @@ p {
   max-width: 430px;
 }
 
-.about__content_p {
+.content__p {
   font-size: 15px;
-  color: #4C4C4C;
+  color: #4c4c4c;
   margin-top: 25px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 749px) {
+  .about__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    gap: 42px;
+  }
+  .about__content {
+    font-size: 15px;
+    margin: 0px 15px 0 15px;
+  }
+  .about-pets {
+    max-width: 260px;
+  }
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 750px) {
+  .about__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 80px;
+  }
 }
 
 /*------------------PETS---------------------*/
 .pets {
-  background-color: #F6F6F6;
-}
-
-.pets h3 {
-  text-align: center;
-  color: #545454;
-}
-
-.pets p {
-  font-family: 'Georgia';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 23px;
-  color: #545454;
+  background-color: #f6f6f6;
 }
 
 .pets__container {
@@ -589,17 +690,17 @@ p {
   margin: 60px 0;
 }
 
-.pets__scroller .pets__scroller__button {
+.scroller__button {
   min-height: 52px;
   min-width: 52px;
-  border: 2px solid #FDDCC4;
-  background-color: #F6F6F6;
+  border: 2px solid #fddcc4;
+  background-color: #f6f6f6;
   border-radius: 999px;
   text-decoration: none;
 }
 
-.pets__scroller .pets__scroller__button:hover {
-  background-color: #FDDCC4;
+.scroller__button:hover {
+  background-color: #fddcc4;
 }
 
 .carousel-wrapper {
@@ -717,15 +818,15 @@ p {
   max-width: 270px;
   padding-bottom: 30px;
   border-radius: 9px 9px 0 0;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   text-decoration: none;
 }
 
 .card .card__button {
   padding: 0.68em 2.045em;
-  border: 2px solid #FDDCC4;
+  border: 2px solid #fddcc4;
   border-radius: 999px;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   font-family: 'Georgia';
   font-style: normal;
   font-weight: 400;
@@ -737,13 +838,13 @@ p {
 
 .card:hover {
   cursor: pointer;
-  background-color: #FFFFFF;
-  -webkit-box-shadow: 0px 0px 10px 5px #B2B2B2;
-          box-shadow: 0px 0px 10px 5px #B2B2B2;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 0px 10px 5px #b2b2b2;
+          box-shadow: 0px 0px 10px 5px #b2b2b2;
 }
 
 .card:hover .card__button {
-  background-color: #FDDCC4;
+  background-color: #fddcc4;
 }
 
 .card_close {
@@ -815,7 +916,7 @@ p {
 
 .pets__button {
   display: inline-block;
-  background-color: #F1CDB3;
+  background-color: #f1cdb3;
   border: none;
   border-radius: 999px;
   padding: 15px 45px;
@@ -830,12 +931,12 @@ p {
 }
 
 .pets__button:hover {
-  background-color: #FDDCC4;
+  background-color: #fddcc4;
 }
 
 /*---------------------HELP----------------------*/
 .help {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .help h3 {
@@ -887,7 +988,6 @@ p {
           align-items: center;
   height: 113px;
   text-align: center;
-  /*border: 2px solid $--main-color-primary;*/
 }
 
 .help__list_card h4 {
@@ -898,7 +998,7 @@ p {
 
 /*-------------------DONATION--------------------*/
 .donation {
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
 }
 
 .donation p {
@@ -907,7 +1007,7 @@ p {
   font-size: 12px;
   line-height: 18px;
   letter-spacing: 0.01rem;
-  color: #B2B2B2;
+  color: #b2b2b2;
 }
 
 .donation h3 {
@@ -970,7 +1070,7 @@ p {
           align-items: center;
   gap: 15px;
   padding: 10px 15px;
-  background-color: #F1CDB3;
+  background-color: #f1cdb3;
   border: none;
   border-radius: 9px;
   text-decoration: none;
@@ -989,11 +1089,11 @@ p {
 }
 
 .footer h3 {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .footer h4 {
-  color: #F1CDB3;
+  color: #f1cdb3;
 }
 
 .footer__container {
@@ -1035,7 +1135,6 @@ p {
   gap: 40px;
   min-height: 234px;
   margin-top: 16px;
-  /*border: 2px solid $--main-color-primary;*/
 }
 
 .footer__content a {
@@ -1080,18 +1179,18 @@ p {
 }
 
 .pets .navigation_button_inactive {
-  border: 2px solid #CDCDCD;
+  border: 2px solid #cdcdcd;
   background-color: none;
 }
 
 .pets .navigation_button_active {
-  border: 2px solid #FDDCC4;
-  background-color: #F6F6F6;
+  border: 2px solid #fddcc4;
+  background-color: #f6f6f6;
 }
 
 .pets .navigation_button_active:hover {
   cursor: pointer;
-  background-color: #FDDCC4;
+  background-color: #fddcc4;
 }
 
 /*----------------------MIN_WIDTH--------------------------------
@@ -1120,65 +1219,8 @@ p {
     text-align: center;
   }
   /*---------------------HEADER--------------------*/
-  .header__container {
-    padding-top: 30px;
-    padding-bottom: 0px;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .header_our_pets {
-    padding-bottom: 25px;
-  }
-  .header__nav {
-    display: none;
-  }
-  .burger__icon {
-    display: block;
-    margin-right: 43px;
-  }
   /*------------------START_SCREEN-----------------*/
-  .start_screen__container {
-    padding-bottom: 0px;
-    padding-top: 60px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    text-align: center;
-  }
-  .start_screen__content {
-    margin: 0 auto;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    text-align: center;
-    gap: 42px;
-  }
-  .start-screen-puppy {
-    max-width: 569px;
-    min-width: 230px;
-    margin-left: 40px;
-    margin-top: 105px;
-  }
   /*---------------------ABOUT---------------------*/
-  .about__container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-    gap: 42px;
-  }
-  .about__content {
-    font-size: 15px;
-    margin: 0px 15px 0 15px;
-  }
-  .about-pets {
-    max-width: 260px;
-  }
   /*---------------------PETS----------------------*/
   .card {
     margin: 0 auto 0 auto;
@@ -1320,31 +1362,7 @@ p {
     padding-left: 30px;
   }
   /*---------------------HEADER--------------------*/
-  .header__container {
-    padding-top: 30px;
-  }
   /*------------------START_SCREEN-----------------*/
-  .start_screen__container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .start_screen__content {
-    margin-top: 0;
-    margin-bottom: 100px;
-  }
-  .start_screen__button {
-    margin-left: 128px;
-  }
-  .start-screen-puppy {
-    max-width: 569px;
-    -ms-flex-item-align: end;
-        align-self: flex-end;
-  }
   /*---------------------PETS----------------------*/
   .cards_wrapper {
     -webkit-box-pack: center;
@@ -1364,19 +1382,6 @@ p {
     margin-top: 50px;
   }
   /*---------------------ABOUT---------------------*/
-  .about__container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    gap: 80px;
-  }
   /*---------------------HELP----------------------*/
   .help__list_card {
     width: 30%;
