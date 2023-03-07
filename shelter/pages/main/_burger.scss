@@ -4,12 +4,11 @@
   transform: translateX(0%);
 }
 
-.burger__menu {
+.burger {
   display: none;
   position: fixed;
   left: 0;
   width: 1000px;
-  // height: 10000px;
 }
 
 .burger__title {
@@ -17,7 +16,7 @@
   margin: 30px 0 0 30px;
 }
 
-.burger-icon {
+.burger__icon {
   display: none;
   z-index: 200; //doesn't works
   transition-duration: 1s;
@@ -40,7 +39,7 @@
   transform: rotate(90deg);
 }
 
-.burger-menu {
+.burger__menu {
   position: fixed;
   top: 0;
   right: 0;
