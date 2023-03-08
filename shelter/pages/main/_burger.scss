@@ -1,6 +1,6 @@
 .closing-area {
   display: none;
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   top: 0;
@@ -16,7 +16,7 @@
 .burger-icon {
   display: none;
   position: relative;
-  z-index: 200;
+  z-index: 400;
   transition-duration: 1s;
 }
 

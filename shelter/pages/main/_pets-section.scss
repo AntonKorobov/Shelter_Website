@@ -110,7 +110,7 @@
   }
 }
 
-.cards_box {
+.cards-box {
   margin: 60px 0;
   display: flex;
   justify-content: center;
@@ -120,13 +120,13 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 749px) {
-  .cards_box {
+  .cards-box {
     margin: 42px 0 60px 0;
   }
 }
 
 @media only screen and (max-width: 1023px) and (min-width: 750px) {
-  .cards_box {
+  .cards-box {
     margin: 30px 0;
   }
 }
@@ -236,7 +236,28 @@
   }
 }
 
-.navigation_button button {
+.navigation-buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 750px) {
+  .navigation-buttons-wrapper {
+    margin-top: 50px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 749px) {
+  .pets .navigation-buttons-wrapper {
+    gap: 10px;
+  }
+  .navigation-buttons-wrapper {
+    margin-top: -15px;
+  }
+}
+
+.navigation-button {
   min-height: 52px;
   min-width: 52px;
   border-radius: 999px;
@@ -244,23 +265,12 @@
   text-align: center;
 }
 
-.navigation_button {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-@media only screen and (max-width: 1023px) and (min-width: 750px) {
-  .navigation_button {
-    margin-top: 50px;
-  }
-}
-
-.navigation_button_inactive {
+.navigation-button_inactive {
   border: 2px solid $--main-color-dark-s;
   background-color: none;
 }
-.navigation_button_active {
+
+.navigation-button_active {
   border: 2px solid $--main-color-primary-light;
   background-color: $--main-color-light-l;
   &:hover {
@@ -268,12 +278,3 @@
     background-color: $--main-color-primary-light;
   }
 }
-
-@media screen and (min-width: 320px) and (max-width: 749px) {
-  .pets .navigation_button {
-    gap: 10px;
-  }
-  .navigation_button {
-    margin-top: -15px;
-  }
-} //!!!!!!!!!
