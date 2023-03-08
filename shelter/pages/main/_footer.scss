@@ -1,0 +1,109 @@
+.footer {
+  background-image: url('../../assets/start-screen-background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footer__p {
+  color: $--main-color-primary;
+}
+
+.footer__h3 {
+  color: $--main-color-light-xl;
+}
+
+@media screen and (min-width: 320px) and (max-width: 749px) {
+  .footer__h4 {
+    font-size: 20px;
+  }
+}
+
+.footer__link {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+}
+
+.footer__container {
+  padding-top: 40px;
+  padding-bottom: 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 320px) and (max-width: 749px) {
+  .footer__container {
+    padding-top: 30px;
+    padding-bottom: 0px;
+    display: block;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 750px) {
+  .footer__container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 52px 0;
+    padding-top: 10px;
+  }
+}
+
+.footer__content-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 59%;
+}
+
+@media screen and (min-width: 320px) and (max-width: 749px) {
+  .footer__content-wrapper {
+    flex-direction: column;
+    gap: 11px;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 750px) {
+  .footer__content-wrapper {
+    width: 100%;
+    justify-content: space-around;
+  }
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 40px;
+  min-height: 234px;
+  margin-top: 16px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 749px) {
+  .footer__content {
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+}
+
+.footer__img-wrapper {
+  max-width: 300px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 749px) {
+  .footer__img-wrapper {
+    margin-top: 40px;
+    padding: 0 20px;
+    margin: 40px auto 0 auto;
+  }
+}
+
+.footer__img-puppy {
+  width: 100%;
+}

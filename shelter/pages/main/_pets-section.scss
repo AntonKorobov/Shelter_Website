@@ -1,0 +1,279 @@
+.pets {
+  background-color: $--main-color-light-l;
+}
+
+.pets__container {
+  text-align: center;
+}
+
+.pets__scroller {
+  display: flex;
+  align-items: center;
+  gap: 4.4%;
+  margin: 60px 0;
+}
+
+@media screen and (min-width: 320px) and (max-width: 749px) {
+  .pets__scroller {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 80px;
+    margin: 42px 0;
+  }
+}
+
+.scroller__button {
+  min-height: 52px;
+  min-width: 52px;
+  border: 2px solid $--main-color-primary-light;
+  background-color: $--main-color-light-l;
+  border-radius: 999px;
+  text-decoration: none;
+  &:hover {
+    background-color: $--main-color-primary-light;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 749px) {
+  .scroller__button {
+    margin-top: 20px;
+  }
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+  padding: 30px 0;
+}
+
+@media screen and (min-width: 320px) and (max-width: 749px) {
+  .carousel-wrapper {
+    order: -1;
+    width: 100%;
+  }
+}
+
+.carousel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel__item {
+  display: flex;
+  justify-content: space-between;
+  flex: 0 0 100%;
+}
+
+@keyframes move-right {
+  from {
+    left: 0;
+  }
+  to {
+    left: +100%;
+  }
+}
+
+.transition-right {
+  animation-name: move-right;
+  animation-duration: 1s;
+}
+
+@keyframes move-left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+.transition-left {
+  animation-name: move-left;
+  animation-duration: 1s;
+}
+
+.pets__container-box {
+  padding-top: 200px;
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 750px) {
+  .pets__container-box {
+    padding-bottom: 75px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 749px) {
+  .pets__container-box {
+    padding-top: 165px;
+  }
+}
+
+.cards_box {
+  margin: 60px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px 40px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 749px) {
+  .cards_box {
+    margin: 42px 0 60px 0;
+  }
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 750px) {
+  .cards_box {
+    margin: 30px 0;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  max-width: 270px;
+  padding-bottom: 30px;
+  border-radius: 9px 9px 0 0;
+  background-color: $--main-color-light-s;
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+    background-color: $--main-color-light-xl;
+    box-shadow: 0px 0px 10px 5px $--main-color-dark-m;
+    .card__button {
+      background-color: $--main-color-primary-light;
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 749px) {
+  .card {
+    margin: 0 auto 0 auto;
+  }
+  .card_2 {
+    display: none;
+  }
+  .card_3 {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 750px) {
+  .card_3 {
+    display: none;
+  }
+}
+
+.card__button {
+  padding: 0.68em 2.045em;
+  border: 2px solid $--main-color-primary-light;
+  border-radius: 999px;
+  background-color: $--main-color-light-s;
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+  color: $--main-color-dark-3xl;
+  letter-spacing: 0.1rem;
+}
+
+.card_close {
+  transform: perspective(1000px) rotateY(90deg);
+}
+
+.card_close-flip {
+  animation-name: close-flip;
+  animation-duration: 0.25s;
+  transform: perspective(1000px) rotateY(90deg);
+}
+
+@keyframes close-flip {
+  from {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  to {
+    transform: perspective(1000px) rotateY(90deg);
+  }
+}
+
+.card_open-flip {
+  animation-name: open-flip;
+  animation-duration: 0.25s;
+  transform: perspective(1000px) rotateY(0deg);
+}
+
+@keyframes open-flip {
+  from {
+    transform: perspective(1000px) rotateY(-90deg);
+  }
+  to {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+}
+
+.pets__button {
+  display: inline-block;
+  background-color: $--main-color-primary;
+  border: none;
+  border-radius: 999px;
+  padding: 15px 45px;
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+  color: $--main-color-dark-3xl;
+  text-decoration: none;
+  letter-spacing: 0.1rem;
+  &:hover {
+    background-color: $--main-color-primary-light;
+  }
+}
+
+.navigation_button button {
+  min-height: 52px;
+  min-width: 52px;
+  border-radius: 999px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.navigation_button {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 750px) {
+  .navigation_button {
+    margin-top: 50px;
+  }
+}
+
+.navigation_button_inactive {
+  border: 2px solid $--main-color-dark-s;
+  background-color: none;
+}
+.navigation_button_active {
+  border: 2px solid $--main-color-primary-light;
+  background-color: $--main-color-light-l;
+  &:hover {
+    cursor: pointer;
+    background-color: $--main-color-primary-light;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 749px) {
+  .pets .navigation_button {
+    gap: 10px;
+  }
+  .navigation_button {
+    margin-top: -15px;
+  }
+} //!!!!!!!!!
